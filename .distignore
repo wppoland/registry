@@ -1,0 +1,33 @@
+# Files excluded from the wp.org build. This plugin is self-contained — it has no
+# runtime Composer dependencies, so /vendor holds only dev tooling and is excluded.
+# autoload.php ships its own PSR-4 fallback loader, so the plugin boots without it.
+/vendor
+/.git
+/.github
+/.gitignore
+/.distignore
+/.wp-env.json
+/.wp-env.override.json
+/node_modules
+/tests
+/scripts
+/docs
+/composer.json
+/composer.lock
+/package.json
+/package-lock.json
+/phpcs.xml.dist
+/phpstan.neon.dist
+/phpstan-baseline.neon
+/playwright.config.ts
+/tsconfig.json
+/vite.config.ts
+/README.md
+/SPEC.md
+/.DS_Store
+
+.DS_Store
+/.wordpress-org
+/test-results
+/playwright-report
+/.playwright-mcp

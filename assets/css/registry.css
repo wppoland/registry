@@ -1,0 +1,196 @@
+/**
+ * Registry — storefront styles (public registry, My Account area, add-to-registry).
+ * Uses CSS custom properties so themes can override; motion is guarded by
+ * prefers-reduced-motion; layout avoids cumulative layout shift.
+ */
+.registry-public,
+.registry-account,
+.registry-add {
+	--registry-gap: 1rem;
+	--registry-radius: 12px;
+	--registry-border: color-mix(in srgb, currentColor 14%, transparent);
+	--registry-muted: color-mix(in srgb, currentColor 62%, transparent);
+	--registry-accent: var(--wp--preset--color--primary, #2563eb);
+	--registry-ok: #1a7f37;
+}
+
+/* ---------- Public registry ---------- */
+.registry-public__head {
+	margin-block-end: 1.5rem;
+}
+
+.registry-public__title {
+	margin: 0 0 0.25rem;
+}
+
+.registry-public__meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+	margin: 0;
+	color: var(--registry-muted);
+}
+
+.registry-public__badge {
+	display: inline-block;
+	padding: 0.15em 0.6em;
+	border-radius: 999px;
+	background: color-mix(in srgb, var(--registry-accent) 14%, transparent);
+	color: var(--registry-accent);
+	font-size: 0.85em;
+	font-weight: 600;
+}
+
+.registry-public__intro {
+	margin-block-start: 0.75rem;
+}
+
+.registry-public__items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: var(--registry-gap);
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+}
+
+.registry-public__item {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: var(--registry-gap);
+	border: 1px solid var(--registry-border);
+	border-radius: var(--registry-radius);
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.registry-public__item:hover {
+	box-shadow: 0 6px 20px color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.registry-public__item.is-fulfilled {
+	opacity: 0.7;
+}
+
+.registry-public__item-media img {
+	width: 100%;
+	height: auto;
+	border-radius: calc(var(--registry-radius) - 4px);
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+}
+
+.registry-public__item-name {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.registry-public__item-progress {
+	margin: 0;
+	font-size: 0.85em;
+	color: var(--registry-muted);
+}
+
+.registry-public__item-action {
+	margin-block-start: auto;
+}
+
+.registry-public__fulfilled {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35em;
+	font-weight: 600;
+	color: var(--registry-ok);
+}
+
+.registry-public__buy:focus-visible,
+.registry-public__item-name:focus-visible {
+	outline: 2px solid var(--registry-accent);
+	outline-offset: 2px;
+}
+
+.registry-public__notice {
+	padding: var(--registry-gap);
+	border: 1px dashed var(--registry-border);
+	border-radius: var(--registry-radius);
+	color: var(--registry-muted);
+}
+
+/* ---------- My Account area ---------- */
+.registry-account__table {
+	width: 100%;
+}
+
+.registry-account__share {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.registry-account__share-input {
+	flex: 1 1 240px;
+	min-width: 0;
+}
+
+.registry-account__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	max-width: 28rem;
+}
+
+.registry-account__qty {
+	width: 5rem;
+}
+
+.registry-account__remove {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	font-size: 1.25rem;
+	line-height: 1;
+	color: var(--registry-muted);
+	transition: color 0.15s ease;
+}
+
+.registry-account__remove:hover,
+.registry-account__remove:focus-visible {
+	color: #b32d2e;
+}
+
+.registry-account__delete {
+	color: #b32d2e;
+	border-color: currentColor;
+}
+
+/* ---------- Add to registry (product page) ---------- */
+.registry-add {
+	margin-block-start: 0.75rem;
+}
+
+.registry-add__label {
+	display: block;
+	font-size: 0.85em;
+	color: var(--registry-muted);
+	margin-block-end: 0.25rem;
+}
+
+.registry-add__row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.registry-add__select {
+	max-width: 18rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.registry-public__item,
+	.registry-account__remove {
+		transition: none;
+	}
+}
