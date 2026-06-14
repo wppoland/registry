@@ -23,7 +23,7 @@ use Registry\Service\PurchaseTracker;
 
 defined('ABSPATH') || exit;
 
-$hooks = [
+$registry_hooks = [
     GiftRegistry::class,
     PurchaseTracker::class,
     PublicView::class,
@@ -32,7 +32,7 @@ $hooks = [
 ];
 
 if (is_admin()) {
-    $hooks[] = AdminSettings::class;
+    $registry_hooks[] = AdminSettings::class;
 }
 
-return $hooks;
+return $registry_hooks;
