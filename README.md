@@ -1,52 +1,32 @@
-# plugin-template
+# Registry - Gift Registry for WooCommerce
 
-GitHub **template repo** for a WPPoland storefront FREE plugin. A thin adapter over
-`wppoland/storefront-kit`, pre-wired to the reusable CI/release workflows. Spin up a new plugin in
-minutes instead of rebuilding CI each time.
+Registry adds gift registries to your WooCommerce store. Logged-in customers create a named registry for an event — a wedding, baby shower, birthday or housewarming — add the products they would love to receive, and share a clean public link with friends and family. Purchased quantities are tracked from real orders, so items that are already covered are marked as fulfilled and nobody double-buys.
 
-## Create a new plugin
+## Features
 
-> 🔔 **You must create a new repository for each plugin.** FREE → a **public** repo
-> `wppoland/<slug>`. PRO → a separate **private** repo `wppoland/<slug>-pro`.
+- Customers create and manage registries under **My Account → Gift Registries**.
+- Event type and event date for every registry.
+- Add products to a registry from any product page, with a desired quantity.
+- Shareable, public, read-only registry page on a clean permalink.
+- Purchased-quantity tracking from WooCommerce orders — remaining counts update automatically.
+- Optional direct purchase straight from the shared registry page.
+- `[gift_registry id="123"]` shortcode to embed a registry on any page.
+- Ownership is enforced on every action, so nothing leaks between customers.
 
-1. **"Use this template" → create `wppoland/<slug>`** (public).
-2. **Run the scaffold script** — replaces all tokens and renames `registry.php → <slug>.php`
-   (cross-platform; review the diff before committing):
-   ```bash
-   python3 scripts/init.py restock Restock "Restock" "Back-in-stock notifications for WooCommerce"
-   #                        ^slug   ^Namespace ^Name    ^short description
-   rm scripts/init.py
-   ```
-   Tokens it replaces (case-sensitive):
+## Installation
 
-   | Token | Replace with | Example |
-   |---|---|---|
-   | `registry` | lowercase slug = text-domain = i18n domain | `restock` |
-   | `Registry` | PSR-4 PHP namespace | `Restock` |
-   | `REGISTRY` (in `define()`) | uppercased namespace | `RESTOCK` |
-   | `registry_` | option/meta prefix (slug, dashes→underscores) | `restock_` |
-   | `Registry - Gift Registry for WooCommerce` / `Let customers create shareable gift registries for weddings, baby showers and events.` / `Let customers create shareable gift registries for weddings, baby showers and events.` | name + descriptions | … |
-3. `composer install` — resolves `wppoland/storefront-kit ^1.0` from VCS (no symlink). Implement
-   your adapter in `src/`, wire it in `config/services.php` + `config/hooks.php`.
-   *(For local atomic kit+adapter dev, see the kit README's path-override note.)*
-4. Add repo secrets: **`WPORG_SVN_USERNAME`**, **`WPORG_SVN_PASSWORD`**.
-5. Drop wp.org assets in `.wordpress-org/`; fill in `readme.txt`.
-6. Add a `PluginEntry` to `plogins` `packages/registry/src/plugins.config.ts` + a docs folder.
-7. **Release:** bump the header `Version:` + `readme.txt` Stable tag, tag `vX.Y.Z`, push →
-   `_release-free.yml` runs CI, vendors the kit, and auto-deploys to wp.org SVN.
+1. Upload the plugin to `/wp-content/plugins/registry`, or install it via **Plugins → Add New**.
+2. Activate it. WooCommerce must be installed and active.
+3. Visit **WooCommerce → Gift Registries** to configure the options.
 
-## What's wired
+## Frequently Asked Questions
 
-- **Bootstrap** (`registry.php`): PHP/WC guards, HPOS + cart-blocks compat, `init` priority 0
-  boot, `do_action('registry/booted')` fired from `Plugin::boot()` (the hook a PRO companion extends).
-- **Autoload** (`autoload.php`): Composer vendor autoloader + PSR-4 fallback (incl. the kit).
-- **DI**: `src/Plugin.php` singleton + `src/Container.php`; services in `config/services.php`,
-  boot order in `config/hooks.php`, defaults in `config/defaults.php`; `src/Migrator.php`.
-- **CI/Release**: `.github/workflows/{ci,release}.yml` call `wppoland/workflows@v1`.
-- **Quality**: `phpcs.xml.dist` (WPCS), `phpstan.neon.dist` (level 6 + WC stubs), `.distignore`
-  (ships `vendor/` so the kit travels), `.wp-env.json`.
+**Who can create a registry?**
+Any logged-in customer, from the My Account → Gift Registries area.
 
-## PRO companion (`<slug>-pro`, private)
+**How does purchase tracking work?**
+When a gift is bought through a registry, the order line item records which registry it belongs to. Once the order is paid, the purchased quantity is added to the registry so the public page shows how many are still needed.
 
-Create a separate private repo. It hooks `add_action('<slug>/booted', …)`, bundles the Freemius
-SDK, and releases via `wppoland/workflows/.github/workflows/_release-pro.yml@v1`.
+Built by WPPoland — https://plogins.com
+
+License: GPL-2.0-or-later
