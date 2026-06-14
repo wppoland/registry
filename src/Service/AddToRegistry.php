@@ -95,7 +95,7 @@ final class AddToRegistry implements HasHooks
                             <?php endforeach; ?>
                         </select>
                         <button type="submit" class="button registry-add__button">
-                            <?php echo esc_html($this->buttonLabel()); ?>
+                            <?php esc_html_e('Add to registry', 'registry'); ?>
                         </button>
                     </span>
                 </form>
@@ -135,12 +135,5 @@ final class AddToRegistry implements HasHooks
 
         wp_safe_redirect($redirect);
         exit;
-    }
-
-    private function buttonLabel(): string
-    {
-        $custom = trim((string) $this->settings->get('button_text', ''));
-
-        return '' !== $custom ? $custom : __('Add to registry', 'registry');
     }
 }

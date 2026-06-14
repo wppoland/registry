@@ -1,13 +1,11 @@
 /**
- * Registry — admin settings styles. Cards, inline-help popovers and a polished,
- * dark-mode-aware layout. Motion guarded by prefers-reduced-motion.
+ * Registry — admin settings styles. A polished, dark-mode-aware card layout.
  */
 
 .registry-admin {
 	--registry-card-bg: #fff;
 	--registry-card-border: #dcdcde;
 	--registry-muted: #50575e;
-	--registry-accent: #2271b1;
 	max-width: 880px;
 }
 
@@ -42,45 +40,6 @@
 	padding-bottom: 0.5rem;
 }
 
-.registry-help {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 18px;
-	height: 18px;
-	margin-left: 0.35rem;
-	padding: 0;
-	border: 1px solid var(--registry-card-border);
-	border-radius: 50%;
-	background: #f6f7f7;
-	color: var(--registry-muted);
-	font-size: 11px;
-	line-height: 1;
-	cursor: help;
-	vertical-align: middle;
-	transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.registry-help:hover,
-.registry-help:focus-visible {
-	background: var(--registry-accent);
-	color: #fff;
-	border-color: var(--registry-accent);
-}
-
-.registry-tip {
-	max-width: 320px;
-	margin: 0;
-	padding: 0.75rem 1rem;
-	border: 1px solid var(--registry-card-border);
-	border-radius: 8px;
-	background: #1d2327;
-	color: #fff;
-	font-size: 13px;
-	line-height: 1.5;
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-}
-
 @media (prefers-color-scheme: dark) {
 	.registry-admin {
 		--registry-card-bg: #1e1e1e;
@@ -90,15 +49,5 @@
 
 	.registry-intro {
 		background: linear-gradient(135deg, #1c2530, #1e1e1e);
-	}
-
-	.registry-help {
-		background: #2c2c2c;
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.registry-help {
-		transition: none;
 	}
 }

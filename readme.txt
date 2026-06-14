@@ -25,14 +25,13 @@ Guests open the shared link, see exactly what is still needed, and buy a gift di
 * Shareable, public, read-only registry page on a clean permalink.
 * Purchased-quantity tracking from WooCommerce orders — remaining counts update automatically.
 * Optional direct purchase straight from the shared registry page.
-* `[gift_registry id="123"]` shortcode to embed a registry on any page.
 * Ownership is enforced on every action; nothing leaks between customers.
 
 == Installation ==
 
 1. Upload the plugin to `/wp-content/plugins/registry`, or install via Plugins → Add New.
 2. Activate it. WooCommerce must be installed and active.
-3. Visit WooCommerce → Gift Registries to configure the options.
+3. Visit WooCommerce → Gift Registries to enable registries and choose whether guests can buy directly.
 
 == Frequently Asked Questions ==
 

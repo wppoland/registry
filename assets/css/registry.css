@@ -42,10 +42,6 @@
 	font-weight: 600;
 }
 
-.registry-public__intro {
-	margin-block-start: 0.75rem;
-}
-
 .registry-public__items {
 	list-style: none;
 	margin: 0;

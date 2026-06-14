@@ -11,9 +11,8 @@ use Registry\Support\Settings;
 defined('ABSPATH') || exit;
 
 /**
- * Renders the public, read-only view of a registry — both on the registry's own
- * permalink (via the_content) and through the [gift_registry id="123"] shortcode
- * for embedding in any page.
+ * Renders the public, read-only view of a registry on the registry's own
+ * shareable permalink (via the_content).
  *
  * Guests see the event details, each wanted product, how many are still needed
  * (desired minus already-purchased) and a button to buy directly. Fully-fulfilled
@@ -31,15 +30,14 @@ final class PublicView implements HasHooks
 
     public function registerHooks(): void
     {
-        add_shortcode('gift_registry', [$this, 'shortcode']);
         add_filter('the_content', [$this, 'appendToSinglePermalink']);
         add_action('wp_enqueue_scripts', [$this, 'registerAssets']);
     }
 
     /**
      * Register (not enqueue) the stylesheet up front. render() enqueues it only
-     * when a registry is actually output, including shortcodes mid-content — WP
-     * prints styles enqueued during the_loop in the footer.
+     * when a registry is actually output — WP prints styles enqueued during
+     * the_loop in the footer.
      */
     public function registerAssets(): void
     {
@@ -67,23 +65,6 @@ final class PublicView implements HasHooks
         }
 
         return $content . $this->render((int) $registryId);
-    }
-
-    /**
-     * [gift_registry id="123"] — embed a registry anywhere.
-     *
-     * @param array<string, mixed>|string $atts
-     */
-    public function shortcode(array|string $atts): string
-    {
-        $atts = shortcode_atts(['id' => 0], (array) $atts, 'gift_registry');
-        $id   = absint($atts['id']);
-
-        if ($id <= 0) {
-            return '';
-        }
-
-        return $this->render($id);
     }
 
     /**
@@ -125,12 +106,6 @@ final class PublicView implements HasHooks
                         </span>
                     <?php endif; ?>
                 </p>
-                <?php
-                $intro = trim((string) $this->settings->get('public_intro', ''));
-                if ('' !== $intro) :
-                    ?>
-                    <div class="registry-public__intro"><?php echo wp_kses_post(wpautop($intro)); ?></div>
-                <?php endif; ?>
             </header>
 
             <?php if ([] === $items) : ?>

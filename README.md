@@ -10,7 +10,6 @@ Registry adds gift registries to your WooCommerce store. Logged-in customers cre
 - Shareable, public, read-only registry page on a clean permalink.
 - Purchased-quantity tracking from WooCommerce orders — remaining counts update automatically.
 - Optional direct purchase straight from the shared registry page.
-- `[gift_registry id="123"]` shortcode to embed a registry on any page.
 - Ownership is enforced on every action, so nothing leaks between customers.
 
 ## Installation

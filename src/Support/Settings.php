@@ -55,12 +55,4 @@ final class Settings
     {
         return (bool) $this->get('allow_purchase', true);
     }
-
-    /**
-     * Drop the in-request cache (used after a save in the same request).
-     */
-    public function flush(): void
-    {
-        $this->cache = null;
-    }
 }

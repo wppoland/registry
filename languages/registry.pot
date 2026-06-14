@@ -9,28 +9,33 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-14T20:33:22+00:00\n"
+"POT-Creation-Date: 2026-06-14T22:02:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: registry\n"
 
 #. Plugin Name of the plugin
+#: registry.php
 msgid "Registry - Gift Registry for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: registry.php
 msgid "https://plogins.com/registry/"
 msgstr ""
 
 #. Description of the plugin
+#: registry.php
 msgid "Let customers create shareable gift registries for weddings, baby showers and events."
 msgstr ""
 
 #. Author of the plugin
+#: registry.php
 msgid "WPPoland"
 msgstr ""
 
 #. Author URI of the plugin
+#: registry.php
 msgid "https://plogins.com/"
 msgstr ""
 
@@ -40,238 +45,187 @@ msgstr ""
 
 #: src/Account/MyRegistries.php:73
 #: src/Account/MyRegistries.php:79
-#: src/Admin/Settings.php:59
-#: src/Admin/Settings.php:60
+#: src/Admin/Settings.php:53
+#: src/Admin/Settings.php:54
 #: src/PostType/GiftRegistry.php:57
 #: src/PostType/GiftRegistry.php:59
 #: src/PostType/GiftRegistry.php:60
 msgid "Gift Registries"
 msgstr ""
 
-#: src/Account/MyRegistries.php:234
+#: src/Account/MyRegistries.php:271
 msgid "Registry created."
 msgstr ""
 
-#: src/Account/MyRegistries.php:235
+#: src/Account/MyRegistries.php:272
 msgid "Registry updated."
 msgstr ""
 
-#: src/Account/MyRegistries.php:236
+#: src/Account/MyRegistries.php:273
 msgid "Registry deleted."
 msgstr ""
 
-#: src/Account/MyRegistries.php:237
+#: src/Account/MyRegistries.php:274
 msgid "Sorry, that action could not be completed."
 msgstr ""
 
-#: src/Account/MyRegistries.php:262
+#: src/Account/MyRegistries.php:299
 msgid "Create a gift registry, add the products you would love to receive, and share the link with friends and family."
 msgstr ""
 
-#: src/Account/MyRegistries.php:266
+#: src/Account/MyRegistries.php:303
 msgid "You have not created any registries yet."
 msgstr ""
 
-#: src/Account/MyRegistries.php:271
-#: src/Admin/Settings.php:201
+#: src/Account/MyRegistries.php:308
 msgid "Registry"
 msgstr ""
 
-#: src/Account/MyRegistries.php:272
-#: src/Admin/Settings.php:203
+#: src/Account/MyRegistries.php:309
 msgid "Event"
 msgstr ""
 
-#: src/Account/MyRegistries.php:273
-#: src/Account/MyRegistries.php:327
+#: src/Account/MyRegistries.php:310
+#: src/Account/MyRegistries.php:364
 msgid "Items"
 msgstr ""
 
-#: src/Account/MyRegistries.php:274
+#: src/Account/MyRegistries.php:311
 msgid "Actions"
 msgstr ""
 
-#: src/Account/MyRegistries.php:288
+#: src/Account/MyRegistries.php:325
 msgid "Manage"
 msgstr ""
 
-#: src/Account/MyRegistries.php:295
+#: src/Account/MyRegistries.php:332
 msgid "Create a new registry"
 msgstr ""
 
-#: src/Account/MyRegistries.php:310
+#: src/Account/MyRegistries.php:347
 msgid "Back to all registries"
 msgstr ""
 
-#: src/Account/MyRegistries.php:315
+#: src/Account/MyRegistries.php:352
 msgid "Shareable link:"
 msgstr ""
 
-#: src/Account/MyRegistries.php:320
+#: src/Account/MyRegistries.php:357
 msgid "Open"
 msgstr ""
 
-#: src/Account/MyRegistries.php:324
+#: src/Account/MyRegistries.php:361
 msgid "Event details"
 msgstr ""
 
-#: src/Account/MyRegistries.php:329
+#: src/Account/MyRegistries.php:366
 msgid "No items yet. Browse the shop and use \"Add to registry\" on a product."
 msgstr ""
 
-#: src/Account/MyRegistries.php:338
-#: src/Account/MyRegistries.php:354
+#: src/Account/MyRegistries.php:375
+#: src/Account/MyRegistries.php:391
 msgid "Product"
 msgstr ""
 
-#: src/Account/MyRegistries.php:339
-#: src/Account/MyRegistries.php:357
+#: src/Account/MyRegistries.php:376
+#: src/Account/MyRegistries.php:394
 msgid "Wanted"
 msgstr ""
 
-#: src/Account/MyRegistries.php:340
-#: src/Account/MyRegistries.php:367
+#: src/Account/MyRegistries.php:377
+#: src/Account/MyRegistries.php:404
 msgid "Purchased"
 msgstr ""
 
-#: src/Account/MyRegistries.php:341
+#: src/Account/MyRegistries.php:378
 msgid "Remove"
 msgstr ""
 
-#: src/Account/MyRegistries.php:359
+#: src/Account/MyRegistries.php:396
 msgid "Desired quantity"
 msgstr ""
 
 #. translators: %s: product name
-#: src/Account/MyRegistries.php:373
+#: src/Account/MyRegistries.php:410
+#, php-format
 msgid "Remove %s"
 msgstr ""
 
-#: src/Account/MyRegistries.php:380
+#: src/Account/MyRegistries.php:417
 msgid "Update quantities"
 msgstr ""
 
-#: src/Account/MyRegistries.php:384
-#: src/Account/MyRegistries.php:390
+#: src/Account/MyRegistries.php:421
+#: src/Account/MyRegistries.php:427
 msgid "Delete registry"
 msgstr ""
 
-#: src/Account/MyRegistries.php:386
+#: src/Account/MyRegistries.php:423
 msgid "Delete this registry? This cannot be undone."
 msgstr ""
 
-#: src/Account/MyRegistries.php:409
+#: src/Account/MyRegistries.php:446
 msgid "Registry name"
 msgstr ""
 
-#: src/Account/MyRegistries.php:412
+#: src/Account/MyRegistries.php:449
 msgid "e.g. Anna & Tom’s Wedding"
 msgstr ""
 
-#: src/Account/MyRegistries.php:416
+#: src/Account/MyRegistries.php:453
 msgid "Event type"
 msgstr ""
 
-#: src/Account/MyRegistries.php:427
+#: src/Account/MyRegistries.php:464
 msgid "Event date"
 msgstr ""
 
-#: src/Account/MyRegistries.php:434
+#: src/Account/MyRegistries.php:471
 msgid "Create registry"
 msgstr ""
 
-#: src/Account/MyRegistries.php:434
+#: src/Account/MyRegistries.php:471
 msgid "Save details"
 msgstr ""
 
-#: src/Admin/Settings.php:96
+#: src/Admin/Settings.php:88
 msgid "Gift registries for your store"
 msgstr ""
 
-#: src/Admin/Settings.php:97
+#: src/Admin/Settings.php:89
 msgid "Let logged-in customers build shareable gift registries for weddings, baby showers and other events. Guests open the shared link, see what is still needed, and buy directly — purchased quantities are tracked from orders so nobody double-buys."
 msgstr ""
 
-#. translators: %s: shortcode wrapped in <code>.
-#: src/Admin/Settings.php:102
-msgid "Customers manage their registries under My Account → Gift Registries. You can also embed any registry with the %s shortcode."
+#: src/Admin/Settings.php:90
+msgid "Customers manage their registries under My Account → Gift Registries."
 msgstr ""
 
-#: src/Admin/Settings.php:113
+#: src/Admin/Settings.php:97
 msgid "General"
 msgstr ""
 
-#: src/Admin/Settings.php:118
+#: src/Admin/Settings.php:101
 msgid "Enable gift registries"
 msgstr ""
 
-#: src/Admin/Settings.php:119
-msgid "The master switch. When off, the storefront button, the My Account area and public registry pages are not rendered."
-msgstr ""
-
-#: src/Admin/Settings.php:126
+#: src/Admin/Settings.php:107
 msgid "Show gift registries on the storefront."
 msgstr ""
 
-#: src/Admin/Settings.php:132
+#: src/Admin/Settings.php:109
+msgid "The master switch. When off, the storefront button, the My Account area and public registry pages are not rendered."
+msgstr ""
+
+#: src/Admin/Settings.php:113
 msgid "Allow direct purchase"
 msgstr ""
 
-#: src/Admin/Settings.php:133
-msgid "When on, guests can buy a registry item straight from the public page. When off, they are sent to the product page instead."
-msgstr ""
-
-#: src/Admin/Settings.php:140
+#: src/Admin/Settings.php:119
 msgid "Let guests buy registry items directly from the shared page."
 msgstr ""
 
-#: src/Admin/Settings.php:146
-msgid "Button text"
-msgstr ""
-
-#: src/Admin/Settings.php:147
-msgid "The label on the \"Add to registry\" button shown under the add-to-cart button. Leave blank to use the default."
-msgstr ""
-
-#: src/Admin/Settings.php:153
-#: src/Service/AddToRegistry.php:144
-msgid "Add to registry"
-msgstr ""
-
-#: src/Admin/Settings.php:158
-msgid "Public page intro"
-msgstr ""
-
-#: src/Admin/Settings.php:159
-msgid "Optional text shown above every public registry. Basic HTML is allowed."
-msgstr ""
-
-#: src/Admin/Settings.php:194
-msgid "Recent registries"
-msgstr ""
-
-#: src/Admin/Settings.php:196
-msgid "No registries have been created yet."
-msgstr ""
-
-#: src/Admin/Settings.php:202
-msgid "Owner"
-msgstr ""
-
-#: src/Admin/Settings.php:204
-msgid "Created"
-msgstr ""
-
-#: src/Admin/Settings.php:205
-msgid "Link"
-msgstr ""
-
-#: src/Admin/Settings.php:221
-msgid "View"
-msgstr ""
-
-#: src/Admin/Settings.php:241
-msgid "More information"
+#: src/Admin/Settings.php:121
+msgid "When off, guests are sent to the product page instead."
 msgstr ""
 
 #: src/PostType/GiftRegistry.php:58
@@ -323,29 +277,34 @@ msgstr ""
 msgid "Add to gift registry"
 msgstr ""
 
-#: src/Service/PublicView.php:102
+#: src/Service/AddToRegistry.php:98
+msgid "Add to registry"
+msgstr ""
+
+#: src/Service/PublicView.php:83
 msgid "This gift registry is not available."
 msgstr ""
 
-#: src/Service/PublicView.php:137
+#: src/Service/PublicView.php:112
 msgid "No items have been added to this registry yet."
 msgstr ""
 
 #. translators: 1: purchased count, 2: desired count
-#: src/Service/PublicView.php:165
+#: src/Service/PublicView.php:140
+#, php-format
 msgid "%1$d of %2$d purchased"
 msgstr ""
 
-#: src/Service/PublicView.php:191
-#: src/Service/PublicView.php:192
+#: src/Service/PublicView.php:166
+#: src/Service/PublicView.php:167
 msgid "Fully purchased"
 msgstr ""
 
-#: src/Service/PublicView.php:197
+#: src/Service/PublicView.php:172
 msgid "View product"
 msgstr ""
 
-#: src/Service/PublicView.php:211
+#: src/Service/PublicView.php:186
 msgid "Buy this gift"
 msgstr ""
 
