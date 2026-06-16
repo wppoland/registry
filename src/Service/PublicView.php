@@ -121,8 +121,16 @@ final class PublicView implements HasHooks
                         $bought    = $purchased[$productId] ?? 0;
                         $remaining = max(0, $desired - $bought);
                         $fulfilled = $remaining <= 0;
+                        $ratio     = $desired > 0 ? min(1.0, $bought / $desired) : 0.0;
                         ?>
-                        <li class="registry-public__item<?php echo $fulfilled ? ' is-fulfilled' : ''; ?>">
+                        <li class="registry-public__item<?php echo $fulfilled ? ' is-fulfilled' : ''; ?>" style="--registry-fill: <?php echo esc_attr((string) round($ratio, 3)); ?>;">
+                            <span class="registry-public__fill" aria-hidden="true"></span>
+                            <?php if ($fulfilled) : ?>
+                                <span class="registry-public__seal" aria-hidden="true">
+                                    <span class="registry-public__seal-ribbon"></span>
+                                    <span class="registry-public__seal-knot"></span>
+                                </span>
+                            <?php endif; ?>
                             <div class="registry-public__item-media">
                                 <a href="<?php echo esc_url((string) get_permalink($productId)); ?>">
                                     <?php echo wp_kses_post($product->get_image('woocommerce_thumbnail')); ?>
