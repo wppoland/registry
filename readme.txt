@@ -13,25 +13,27 @@ Let customers create shareable gift registries for weddings, baby showers and ev
 
 == Description ==
 
-Registry adds gift registries to your WooCommerce store. Logged-in customers create a named registry for an event — a wedding, baby shower, birthday or housewarming — add the products they would love to receive, and share a clean public link with friends and family.
+Registry adds gift registries to your WooCommerce store. A logged-in customer creates a named registry for an event (wedding, baby shower, birthday, housewarming or other), picks the products they want from the shop, and gets a shareable link to send to friends and family.
 
-Guests open the shared link, see exactly what is still needed, and buy a gift directly. Purchased quantities are tracked from real orders, so items that are already covered are marked as fulfilled and nobody double-buys.
+Guests open that link, see which items are still needed, and buy a gift. Purchased quantities are counted from real WooCommerce orders, so anything already bought is marked as fully purchased and two people don't buy the same thing twice.
+
+Source and issue tracker live on GitHub: https://github.com/wppoland/registry
 
 = Features =
 
-* Customers create and manage registries under My Account → Gift Registries.
-* Event type and event date for every registry.
-* Add products to a registry from any product page, with a desired quantity.
-* Shareable, public, read-only registry page on a clean permalink.
-* Purchased-quantity tracking from WooCommerce orders — remaining counts update automatically.
-* Optional direct purchase straight from the shared registry page.
-* Ownership is enforced on every action; nothing leaks between customers.
+* Customers create and manage their registries under My Account → Gift Registries.
+* Each registry has an event type (wedding, baby shower, birthday, housewarming, other) and an event date.
+* An "Add to gift registry" control on single product pages, with a per-item desired quantity.
+* A public, read-only registry page on its own permalink, made for sharing.
+* Purchased quantities are read back from paid WooCommerce orders, so remaining counts stay current without manual updates.
+* Optional direct purchase from the shared page; with it off, guests are sent to the product page instead.
+* Every action checks registry ownership, so one customer can never edit another's registry.
 
 == Installation ==
 
 1. Upload the plugin to `/wp-content/plugins/registry`, or install via Plugins → Add New.
 2. Activate it. WooCommerce must be installed and active.
-3. Visit WooCommerce → Gift Registries to enable registries and choose whether guests can buy directly.
+3. Registries are on by default. Visit WooCommerce → Gift Registries to turn them off or to choose whether guests can buy directly from the shared page.
 
 == Frequently Asked Questions ==
 
@@ -45,7 +47,7 @@ Any logged-in customer, from the My Account → Gift Registries area.
 
 = How does purchase tracking work? =
 
-When a gift is bought through a registry, the order line item records which registry it belongs to. Once the order is paid, the purchased quantity is added to the registry so the public page shows how many are still needed.
+When a gift is bought through a registry, the registry it belongs to is stored on the order line item. When that order reaches processing or completed, the quantity is added to the registry's purchased count, and the public page subtracts it from what's still needed. Each order is only counted once.
 
 = Can guests buy directly from the shared page? =
 
