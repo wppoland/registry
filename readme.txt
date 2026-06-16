@@ -53,11 +53,13 @@ When a gift is bought through a registry, the registry it belongs to is stored o
 
 Yes, if "Allow direct purchase" is enabled in the settings. Otherwise the buy button sends guests to the product page.
 
+= Do guests need an account to view a shared registry? =
+
+No. The public registry page is read-only for anyone with the link; only creating and editing registries requires a logged-in customer.
+
 == Screenshots ==
 
 1. The public, shareable gift registry page with purchase progress.
-2. Managing a registry under My Account.
-3. The Gift Registries settings page under WooCommerce.
 
 == Changelog ==
 
