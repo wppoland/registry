@@ -15,7 +15,14 @@
 	 * falls back to a warm registry hue rather than a generic dashboard blue —
 	 * this is a shared gift list, not an admin panel.
 	 */
-	--registry-accent: var(--wp--preset--color--primary, #c0306b);
+	--registry-accent: var(--wp--preset--color--primary, #ad275f);
+	/*
+	 * Accent-as-text needs WCAG AA contrast (>=4.5:1). The fill accent is deep
+	 * enough on light surfaces; in dark mode it would drop to ~3:1, so the text
+	 * variant is lifted to a lighter rose there (same hue, brighter). Kept as a
+	 * separate token so the white-on-accent button fill stays the deep rose.
+	 */
+	--registry-accent-text: var(--registry-accent);
 	--registry-ribbon: color-mix(in srgb, var(--registry-accent) 86%, #ff84b3);
 	--registry-ok: #1a7f37;
 }
@@ -43,7 +50,7 @@
 	padding: 0.15em 0.6em;
 	border-radius: 999px;
 	background: color-mix(in srgb, var(--registry-accent) 14%, transparent);
-	color: var(--registry-accent);
+	color: var(--registry-accent-text);
 	font-size: 0.85em;
 	font-weight: 600;
 }
@@ -200,7 +207,7 @@
 }
 
 .registry-public__item.is-fulfilled .registry-public__item-progress {
-	color: color-mix(in srgb, var(--registry-accent) 70%, var(--registry-muted));
+	color: color-mix(in srgb, var(--registry-accent-text) 70%, var(--registry-muted));
 	font-weight: 600;
 }
 
@@ -331,6 +338,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
+	.registry-public,
+	.registry-account,
+	.registry-add {
+		/* Lighter rose so accent-coloured text clears AA on dark surfaces. */
+		--registry-accent-text: #ec6da3;
+	}
+
 	.registry-public__item.is-fulfilled {
 		background: color-mix(in srgb, var(--registry-accent) 12%, transparent);
 	}
