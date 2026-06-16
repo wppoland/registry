@@ -1,17 +1,28 @@
 /**
  * Registry — admin settings styles. A polished, dark-mode-aware card layout.
+ *
+ * The one distinctive touch is the family accent: the same ribbon-rose used on
+ * the storefront registry (#ad275f) appears as a thin section rule, so the
+ * admin screen reads as part of the same product. It is used only for borders
+ * and large headings — never as small body text — and the chosen rose clears
+ * WCAG AA on both admin surfaces: 6.50:1 on card white (#fff) and 5.70:1 on the
+ * wp-admin grey (#f0f0f1), comfortably past the 4.5:1 text / 3:1 UI floors.
  */
 
 .registry-admin {
 	--registry-card-bg: #fff;
 	--registry-card-border: #dcdcde;
 	--registry-muted: #50575e;
+	/* Ribbon-rose — matches the storefront registry accent for family consistency. */
+	--registry-accent: #ad275f;
+	--registry-accent-tint: #fbeef3;
 	max-width: 880px;
 }
 
 .registry-intro {
-	background: linear-gradient(135deg, #f0f6fc, #f6f7f7);
+	background: linear-gradient(135deg, var(--registry-accent-tint), #f6f7f7);
 	border: 1px solid var(--registry-card-border);
+	border-inline-start: 4px solid var(--registry-accent);
 	border-radius: 10px;
 	padding: 1.25rem 1.5rem;
 	margin: 1rem 0 1.5rem;
@@ -36,8 +47,37 @@
 }
 
 .registry-card h2 {
-	border-bottom: 1px solid var(--registry-card-border);
+	border-bottom: 2px solid var(--registry-accent);
 	padding-bottom: 0.5rem;
+	display: inline-block;
+}
+
+.registry-card__lead {
+	color: var(--registry-muted);
+	max-width: 72ch;
+	margin: 0.25rem 0 0;
+}
+
+/* Inline "show, don't just tell" example of a shared registry link. */
+.registry-example {
+	margin: 0.5rem 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.4rem;
+	font-size: 0.85em;
+}
+
+.registry-example__label {
+	color: var(--registry-muted);
+}
+
+.registry-example__code {
+	background: var(--registry-accent-tint);
+	border: 1px solid var(--registry-card-border);
+	border-radius: 6px;
+	padding: 0.1em 0.5em;
+	color: #8a1d4b; /* deeper rose — 7.90:1 on the tint, well past AA */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,9 +85,16 @@
 		--registry-card-bg: #1e1e1e;
 		--registry-card-border: #3c3c3c;
 		--registry-muted: #bbb;
+		/* Lifted rose so the accent stays vivid against dark surfaces. */
+		--registry-accent: #ec6da3;
+		--registry-accent-tint: #2a1b22;
 	}
 
 	.registry-intro {
-		background: linear-gradient(135deg, #1c2530, #1e1e1e);
+		background: linear-gradient(135deg, var(--registry-accent-tint), #1e1e1e);
+	}
+
+	.registry-example__code {
+		color: #f1a9c6; /* light rose on the dark tint — 8.79:1, past AA */
 	}
 }
