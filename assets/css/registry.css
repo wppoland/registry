@@ -10,7 +10,13 @@
 	--registry-radius: 12px;
 	--registry-border: color-mix(in srgb, currentColor 14%, transparent);
 	--registry-muted: color-mix(in srgb, currentColor 62%, transparent);
-	--registry-accent: var(--wp--preset--color--primary, #2563eb);
+	/*
+	 * Ribbon-rose: the colour of gift ribbon and celebration. Themeable, but it
+	 * falls back to a warm registry hue rather than a generic dashboard blue —
+	 * this is a shared gift list, not an admin panel.
+	 */
+	--registry-accent: var(--wp--preset--color--primary, #c0306b);
+	--registry-ribbon: color-mix(in srgb, var(--registry-accent) 86%, #ff84b3);
 	--registry-ok: #1a7f37;
 }
 
@@ -52,12 +58,16 @@
 }
 
 .registry-public__item {
+	--registry-fill: 0;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 	padding: var(--registry-gap);
+	padding-inline-start: calc(var(--registry-gap) + 0.55rem);
 	border: 1px solid var(--registry-border);
 	border-radius: var(--registry-radius);
+	overflow: hidden;
 	transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -65,8 +75,109 @@
 	box-shadow: 0 6px 20px color-mix(in srgb, currentColor 10%, transparent);
 }
 
+/*
+ * THE MOMENT — the gift "fills up" as guests claim it. A ribbon channel runs
+ * down the inner edge of every card; it floods upward from the bottom in
+ * proportion to how many gifts have been bought (--registry-fill, 0..1). The
+ * empty track is faint; the filled ribbon is warm rose with a soft sateen
+ * sheen. This is the one read a guest scans for: how full is this wish.
+ */
+.registry-public__fill {
+	position: absolute;
+	inset-block: 0.55rem;
+	inset-inline-start: 0.55rem;
+	width: 0.32rem;
+	border-radius: 999px;
+	background: color-mix(in srgb, var(--registry-accent) 16%, transparent);
+}
+
+.registry-public__fill::after {
+	content: "";
+	position: absolute;
+	inset-inline: 0;
+	inset-block-end: 0;
+	border-radius: 999px;
+	height: calc(var(--registry-fill, 0) * 100%);
+	background: linear-gradient(
+		to top,
+		var(--registry-accent),
+		var(--registry-ribbon)
+	);
+	box-shadow: 0 0 0.4rem color-mix(in srgb, var(--registry-accent) 30%, transparent);
+	transform-origin: bottom;
+	transform: scaleY(0);
+	animation: registry-fill-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+}
+
+@keyframes registry-fill-rise {
+	to {
+		transform: scaleY(1);
+	}
+}
+
 .registry-public__item.is-fulfilled {
-	opacity: 0.7;
+	border-color: color-mix(in srgb, var(--registry-accent) 30%, var(--registry-border));
+	background: color-mix(in srgb, var(--registry-accent) 4%, transparent);
+}
+
+/*
+ * When a wish is fully claimed it gets a ribbon-bow seal in the top corner —
+ * the gift is tied off. The bow cinches tight once on entry (one earned beat).
+ */
+.registry-public__seal {
+	position: absolute;
+	inset-block-start: 0.6rem;
+	inset-inline-end: 0.6rem;
+	width: 2.1rem;
+	height: 2.1rem;
+	z-index: 1;
+	filter: drop-shadow(0 1px 2px color-mix(in srgb, var(--registry-accent) 35%, transparent));
+	transform: scale(0.55) rotate(-6deg);
+	opacity: 0;
+	animation: registry-seal-cinch 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s forwards;
+}
+
+/* The bow's centre knot, sitting on top of the two ears. */
+.registry-public__seal-knot {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	width: 0.5rem;
+	height: 0.7rem;
+	border-radius: 0.18rem;
+	background: var(--registry-ribbon);
+	z-index: 2;
+}
+
+/* The two triangular ears of the bow, meeting at the knot. */
+.registry-public__seal-ribbon,
+.registry-public__seal-ribbon::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	width: 0.95rem;
+	height: 1.05rem;
+	clip-path: polygon(100% 0, 100% 100%, 0 50%);
+	border-radius: 0.1rem;
+	background: var(--registry-accent);
+	transform: translateX(-0.42rem);
+}
+
+.registry-public__seal-ribbon::before {
+	transform: translateX(0.42rem) scaleX(-1);
+	background: color-mix(in srgb, var(--registry-accent) 84%, #000);
+}
+
+@keyframes registry-seal-cinch {
+	60% {
+		transform: scale(1.12) rotate(-8deg);
+		opacity: 1;
+	}
+	to {
+		transform: scale(1) rotate(-8deg);
+		opacity: 1;
+	}
 }
 
 .registry-public__item-media img {
@@ -88,6 +199,11 @@
 	color: var(--registry-muted);
 }
 
+.registry-public__item.is-fulfilled .registry-public__item-progress {
+	color: color-mix(in srgb, var(--registry-accent) 70%, var(--registry-muted));
+	font-weight: 600;
+}
+
 .registry-public__item-action {
 	margin-block-start: auto;
 }
@@ -98,6 +214,17 @@
 	gap: 0.35em;
 	font-weight: 600;
 	color: var(--registry-ok);
+}
+
+.registry-public__buy {
+	background: var(--registry-accent);
+	border-color: var(--registry-accent);
+	color: #fff;
+}
+
+.registry-public__buy:hover {
+	background: color-mix(in srgb, var(--registry-accent) 88%, #000);
+	border-color: color-mix(in srgb, var(--registry-accent) 88%, #000);
 }
 
 .registry-public__buy:focus-visible,
@@ -188,5 +315,23 @@
 	.registry-public__item,
 	.registry-account__remove {
 		transition: none;
+	}
+
+	/* No motion: ribbon and seal land instantly at their final state. */
+	.registry-public__fill::after {
+		animation: none;
+		transform: scaleY(1);
+	}
+
+	.registry-public__seal {
+		animation: none;
+		opacity: 1;
+		transform: scale(1) rotate(-8deg);
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.registry-public__item.is-fulfilled {
+		background: color-mix(in srgb, var(--registry-accent) 12%, transparent);
 	}
 }
