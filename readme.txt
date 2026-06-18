@@ -19,6 +19,15 @@ Guests open that link, see which items are still needed, and buy a gift. Purchas
 
 Source and issue tracker live on GitHub: https://github.com/wppoland/registry
 
+= Documentation and links =
+
+* **Documentation** - https://plogins.com/registry/docs/
+* **Plugin page** - https://plogins.com/registry/
+* **Source code** - https://github.com/wppoland/registry
+* **Bug reports and feature requests** - https://github.com/wppoland/registry/issues
+* **Discussions and questions** - https://github.com/wppoland/registry/discussions
+
+
 = Features =
 
 * Customers create and manage their registries under My Account → Gift Registries.
