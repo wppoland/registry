@@ -1,5 +1,5 @@
 === Registry - Gift Registry for WooCommerce ===
-Contributors: wppoland
+Contributors: motylanogha
 Tags: woocommerce, gift registry, wishlist, wedding, baby shower
 Requires at least: 6.5
 Tested up to: 7.0
