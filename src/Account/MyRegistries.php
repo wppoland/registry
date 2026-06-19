@@ -167,6 +167,14 @@ final class MyRegistries implements HasHooks
      */
     private function doCreate(int $userId, array $data): void
     {
+        $limit = (int) apply_filters('registry/max_registries_limit', 1, $userId);
+        $registries = $this->manager->forUser($userId);
+
+        if ($limit > 0 && count($registries) >= $limit) {
+            $this->redirect(['msg' => 'limit_reached']);
+            return;
+        }
+
         $id = $this->manager->create(
             $userId,
             (string) $data['title'],
@@ -268,10 +276,11 @@ final class MyRegistries implements HasHooks
         }
 
         $map = [
-            'created' => __('Registry created.', 'registry'),
-            'updated' => __('Registry updated.', 'registry'),
-            'deleted' => __('Registry deleted.', 'registry'),
-            'error'   => __('Sorry, that action could not be completed.', 'registry'),
+            'created'       => __('Registry created.', 'registry'),
+            'updated'       => __('Registry updated.', 'registry'),
+            'deleted'       => __('Registry deleted.', 'registry'),
+            'limit_reached' => __('You have reached the maximum number of gift registries allowed.', 'registry'),
+            'error'         => __('Sorry, that action could not be completed.', 'registry'),
         ];
 
         $key = sanitize_key(wp_unslash($_GET['msg'])); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -293,6 +302,7 @@ final class MyRegistries implements HasHooks
 
     private function renderList(int $userId): void
     {
+        $limit      = (int) apply_filters('registry/max_registries_limit', 1, $userId);
         $registries = $this->manager->forUser($userId);
         ?>
         <p class="registry-account__intro">
@@ -329,8 +339,24 @@ final class MyRegistries implements HasHooks
             </table>
         <?php endif; ?>
 
-        <h3><?php esc_html_e('Create a new registry', 'registry'); ?></h3>
-        <?php $this->renderDetailsForm('create', 0, '', 'wedding', ''); ?>
+        <?php if ($limit <= 0 || count($registries) < $limit) : ?>
+            <h3><?php esc_html_e('Create a new registry', 'registry'); ?></h3>
+            <?php $this->renderDetailsForm('create', 0, '', 'wedding', ''); ?>
+        <?php else : ?>
+            <div class="woocommerce-info">
+                <?php
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML from filter is safe.
+                echo apply_filters(
+                    'registry/limit_notice_html',
+                    sprintf(
+                        /* translators: %d: registries limit */
+                        __('You have reached the limit of %d gift registry. Upgrade to Registry Pro to create multiple gift registries.', 'registry'),
+                        $limit
+                    )
+                );
+                ?>
+            </div>
+        <?php endif; ?>
         <?php
     }
 
