@@ -35,6 +35,15 @@ final class GiftRegistry implements HasHooks
      */
     public const META_ITEMS = '_registry_items';
 
+    /**
+     * Co-owner / contributor user IDs (array of ints). Written by Registry Pro
+     * when group gifting is enabled; the free plugin exposes the meta key and
+     * read helper only.
+     *
+     * @var string
+     */
+    public const META_CONTRIBUTORS = '_registry_contributors';
+
     public function registerHooks(): void
     {
         $this->register();
@@ -132,8 +141,9 @@ final class GiftRegistry implements HasHooks
     }
 
     /**
-     * Whether the given user owns the registry. Used everywhere before any
-     * mutating action to prevent IDOR.
+     * Whether the given user is the primary owner (post author). Extensions can
+     * widen management access via the registry/can_manage filter without
+     * changing this check.
      */
     public function isOwner(int $registryId, int $userId): bool
     {
@@ -147,7 +157,79 @@ final class GiftRegistry implements HasHooks
             return false;
         }
 
-        return (int) $post->post_author === $userId;
+        $isAuthor = (int) $post->post_author === $userId;
+
+        /**
+         * Filter whether the user is the primary registry owner.
+         *
+         * @param bool $isAuthor   Whether the user is the post author.
+         * @param int  $registryId Registry post ID.
+         * @param int  $userId     User ID.
+         */
+        return (bool) apply_filters('registry/is_owner', $isAuthor, $registryId, $userId);
+    }
+
+    /**
+     * Whether the user may manage registry details and items (not necessarily
+     * delete). Defaults to primary ownership; PRO group gifting extends this
+     * via registry/can_manage.
+     */
+    public function canManage(int $registryId, int $userId): bool
+    {
+        $can = $this->isOwner($registryId, $userId);
+
+        /**
+         * Filter whether the user may manage a registry (edit details, items).
+         *
+         * @param bool $can        Default access (primary owner).
+         * @param int  $registryId Registry post ID.
+         * @param int  $userId     User ID.
+         */
+        return (bool) apply_filters('registry/can_manage', $can, $registryId, $userId);
+    }
+
+    /**
+     * Whether the user may delete (trash) the registry. Defaults to primary
+     * ownership so co-owners added by PRO cannot remove the list itself.
+     */
+    public function canDelete(int $registryId, int $userId): bool
+    {
+        $can = $this->isOwner($registryId, $userId);
+
+        /**
+         * Filter whether the user may delete a registry.
+         *
+         * @param bool $can        Default access (primary owner).
+         * @param int  $registryId Registry post ID.
+         * @param int  $userId     User ID.
+         */
+        return (bool) apply_filters('registry/can_delete', $can, $registryId, $userId);
+    }
+
+    /**
+     * Contributor user IDs stored on the registry (empty when none).
+     *
+     * @return array<int, int>
+     */
+    public function contributors(int $registryId): array
+    {
+        $raw = get_post_meta($registryId, self::META_CONTRIBUTORS, true);
+
+        if (! is_array($raw)) {
+            return [];
+        }
+
+        $clean = [];
+
+        foreach ($raw as $userId) {
+            $userId = absint($userId);
+
+            if ($userId > 0) {
+                $clean[] = $userId;
+            }
+        }
+
+        return array_values(array_unique($clean));
     }
 
     /**
