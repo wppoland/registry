@@ -11,8 +11,8 @@ defined('ABSPATH') || exit;
 /**
  * Owner-side operations on a registry: create, rename, set event details, add and
  * remove items and adjust desired quantities. Every mutating method enforces
- * ownership through GiftRegistry::isOwner() so a logged-in user can never act on
- * a registry that is not theirs (no IDOR).
+ * ownership through GiftRegistry::canManage() / canDelete() so a logged-in user
+ * can never act on a registry they are not allowed to manage (no IDOR).
  *
  * These methods are intentionally side-effect light: they validate, persist and
  * return a boolean / id. Controllers (My Account, storefront button) handle
@@ -67,7 +67,7 @@ final class RegistryManager
      */
     public function updateDetails(int $registryId, int $userId, string $title, string $eventType, string $eventDate): bool
     {
-        if (! $this->cpt->isOwner($registryId, $userId)) {
+        if (! $this->cpt->canManage($registryId, $userId)) {
             return false;
         }
 
@@ -95,7 +95,7 @@ final class RegistryManager
      */
     public function delete(int $registryId, int $userId): bool
     {
-        if (! $this->cpt->isOwner($registryId, $userId)) {
+        if (! $this->cpt->canDelete($registryId, $userId)) {
             return false;
         }
 
@@ -107,7 +107,7 @@ final class RegistryManager
      */
     public function addItem(int $registryId, int $userId, int $productId, int $qty = 1): bool
     {
-        if (! $this->cpt->isOwner($registryId, $userId)) {
+        if (! $this->cpt->canManage($registryId, $userId)) {
             return false;
         }
 
@@ -135,7 +135,7 @@ final class RegistryManager
      */
     public function setQuantity(int $registryId, int $userId, int $productId, int $qty): bool
     {
-        if (! $this->cpt->isOwner($registryId, $userId)) {
+        if (! $this->cpt->canManage($registryId, $userId)) {
             return false;
         }
 
@@ -160,7 +160,7 @@ final class RegistryManager
      */
     public function removeItem(int $registryId, int $userId, int $productId): bool
     {
-        if (! $this->cpt->isOwner($registryId, $userId)) {
+        if (! $this->cpt->canManage($registryId, $userId)) {
             return false;
         }
 
@@ -187,7 +187,7 @@ final class RegistryManager
             return [];
         }
 
-        return get_posts([
+        $owned = get_posts([
             'post_type'      => GiftRegistry::POST_TYPE,
             'author'         => $userId,
             'post_status'    => 'publish',
@@ -195,6 +195,14 @@ final class RegistryManager
             'orderby'        => 'date',
             'order'          => 'DESC',
         ]);
+
+        /**
+         * Filter registries shown in My Account for a user (owned plus shared).
+         *
+         * @param array<int, \WP_Post> $owned  Registries authored by the user.
+         * @param int                   $userId User ID.
+         */
+        return apply_filters('registry/user_registries', $owned, $userId);
     }
 
     private function normaliseEventType(string $eventType): string

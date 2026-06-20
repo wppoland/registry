@@ -259,7 +259,7 @@ final class MyRegistries implements HasHooks
         echo '<div class="registry-account">';
         $this->renderNotices();
 
-        if ($viewId > 0 && $this->cpt->isOwner($viewId, $userId)) {
+        if ($viewId > 0 && $this->cpt->canManage($viewId, $userId)) {
             $this->renderSingle($viewId);
         } else {
             $this->renderList($userId);
@@ -282,6 +282,13 @@ final class MyRegistries implements HasHooks
             'limit_reached' => __('You have reached the maximum number of gift registries allowed.', 'registry'),
             'error'         => __('Sorry, that action could not be completed.', 'registry'),
         ];
+
+        /**
+         * Filter My Account notice messages keyed by ?msg= query arg.
+         *
+         * @param array<string, string> $map
+         */
+        $map = apply_filters('registry/account/notices', $map);
 
         $key = sanitize_key(wp_unslash($_GET['msg'])); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
@@ -444,14 +451,26 @@ final class MyRegistries implements HasHooks
             </form>
         <?php endif; ?>
 
-        <h4><?php esc_html_e('Delete registry', 'registry'); ?></h4>
-        <form method="post" class="registry-account__delete-form"
-            onsubmit="return confirm('<?php echo esc_js(__('Delete this registry? This cannot be undone.', 'registry')); ?>');">
-            <?php wp_nonce_field(self::NONCE, 'registry_nonce'); ?>
-            <input type="hidden" name="registry_action" value="delete" />
-            <input type="hidden" name="registry_id" value="<?php echo esc_attr((string) $registryId); ?>" />
-            <button type="submit" class="button registry-account__delete"><?php esc_html_e('Delete registry', 'registry'); ?></button>
-        </form>
+        <?php if ($this->cpt->canDelete($registryId, get_current_user_id())) : ?>
+            <h4><?php esc_html_e('Delete registry', 'registry'); ?></h4>
+            <form method="post" class="registry-account__delete-form"
+                onsubmit="return confirm('<?php echo esc_js(__('Delete this registry? This cannot be undone.', 'registry')); ?>');">
+                <?php wp_nonce_field(self::NONCE, 'registry_nonce'); ?>
+                <input type="hidden" name="registry_action" value="delete" />
+                <input type="hidden" name="registry_id" value="<?php echo esc_attr((string) $registryId); ?>" />
+                <button type="submit" class="button registry-account__delete"><?php esc_html_e('Delete registry', 'registry'); ?></button>
+            </form>
+        <?php endif; ?>
+
+        <?php
+        /**
+         * Fires on the single-registry My Account view after core sections.
+         *
+         * @param int $registryId Registry post ID.
+         * @param int $userId     Current user ID.
+         */
+        do_action('registry/account/single_registry', $registryId, get_current_user_id());
+        ?>
         <?php
     }
 

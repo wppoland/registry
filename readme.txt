@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,10 @@ No. The public registry page is read-only for anyone with the link; only creatin
 Registry does not connect to any external service. It makes no outbound network requests and sends no data off your site. Registries are stored in WordPress as a `gift_registry` custom post type with `_registry_*` post meta (event type, event date, chosen items and purchased counts), and the plugin's settings live in the `registry_settings` and `registry_db_version` options. Purchase tracking reads from your own WooCommerce orders and records `_registry_id`, `_registry_purchased` and `_registry_counted` on the relevant order line items; everything stays in your database.
 
 == Changelog ==
+
+= 0.1.3 =
+* Add registry/can_manage, registry/can_delete, registry/user_registries and registry/is_owner filters for shared registries.
+* Add registry/account/single_registry action, registry/account/notices filter and _registry_contributors meta helper for co-owned lists.
 
 = 0.1.2 =
 * Add registry/max_registries_limit filter.
