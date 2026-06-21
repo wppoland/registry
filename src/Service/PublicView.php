@@ -90,9 +90,52 @@ final class PublicView implements HasHooks
         $eventType = (string) get_post_meta($registryId, GiftRegistry::META_EVENT_TYPE, true);
         $eventDate = (string) get_post_meta($registryId, GiftRegistry::META_EVENT_DATE, true);
 
+        /**
+         * Filters the visual theme slug for a public registry page.
+         *
+         * @param string $theme      Theme slug.
+         * @param int    $registryId Registry post ID.
+         */
+        $theme = (string) apply_filters('registry/theme', 'classic', $registryId);
+        $theme = sanitize_key($theme);
+        if ('' === $theme) {
+            $theme = 'classic';
+        }
+
+        /**
+         * Filters CSS custom property overrides for a public registry page.
+         *
+         * @param array<string, string> $vars       CSS variable map (without `--` prefix).
+         * @param int                   $registryId Registry post ID.
+         */
+        $themeVars = apply_filters('registry/theme_vars', [], $registryId);
+        if (! is_array($themeVars)) {
+            $themeVars = [];
+        }
+
+        $inlineStyle = '';
+        foreach ($themeVars as $key => $value) {
+            $key = sanitize_key((string) $key);
+            if ('' === $key) {
+                continue;
+            }
+            $inlineStyle .= '--registry-' . $key . ':' . esc_attr((string) $value) . ';';
+        }
+
         ob_start();
         ?>
-        <div class="registry-public">
+        <div
+            class="registry-public registry-public--<?php echo esc_attr($theme); ?>"
+            <?php echo '' !== $inlineStyle ? ' style="' . esc_attr($inlineStyle) . '"' : ''; ?>
+        >
+            <?php
+            /**
+             * Fires before the registry header on the public share page.
+             *
+             * @param int $registryId Registry post ID.
+             */
+            do_action('registry/public_hero', $registryId);
+            ?>
             <header class="registry-public__head">
                 <h2 class="registry-public__title"><?php echo esc_html(get_the_title($registryId)); ?></h2>
                 <p class="registry-public__meta">
