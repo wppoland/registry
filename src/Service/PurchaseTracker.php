@@ -135,6 +135,29 @@ final class PurchaseTracker implements HasHooks
 
         foreach ($touched as $registryId => $products) {
             $this->increment($registryId, $products);
+
+            /**
+             * Fires after registry purchase totals were updated for an order.
+             *
+             * @param int                    $orderId    Order ID.
+             * @param int                    $registryId Registry post ID.
+             * @param array<int, int>        $products   product_id => qty purchased in this order.
+             * @param \WC_Order              $order      Order object.
+             */
+            do_action('registry/purchase_recorded', $orderId, $registryId, $products, $order);
+
+            foreach ($products as $productId => $qty) {
+                /**
+                 * Fires for each registry gift line counted on a paid order.
+                 *
+                 * @param int       $orderId    Order ID.
+                 * @param int       $registryId Registry post ID.
+                 * @param int       $productId  Product ID.
+                 * @param int       $qty        Quantity purchased.
+                 * @param \WC_Order $order      Order object.
+                 */
+                do_action('registry/thankyou_purchase', $orderId, $registryId, $productId, $qty, $order);
+            }
         }
 
         $order->update_meta_data(self::ORDER_COUNTED, '1');
