@@ -86,7 +86,7 @@ final class Settings implements HasHooks
 
             <div class="registry-intro">
                 <h2><?php esc_html_e('Gift registries for your store', 'registry'); ?></h2>
-                <p><?php esc_html_e('Let logged-in customers build shareable gift registries for weddings, baby showers and other events. Guests open the shared link, see what is still needed, and buy directly — purchased quantities are tracked from orders so nobody double-buys.', 'registry'); ?></p>
+                <p><?php esc_html_e('Let logged-in customers build shareable gift registries for weddings, baby showers and other events. Guests open the shared link, see what is still needed, and buy directly, purchased quantities are tracked from orders so nobody double-buys.', 'registry'); ?></p>
                 <p><?php esc_html_e('Customers manage their registries under My Account → Gift Registries.', 'registry'); ?></p>
             </div>
 
@@ -95,7 +95,7 @@ final class Settings implements HasHooks
 
                 <div class="registry-card">
                     <h2><?php esc_html_e('Storefront visibility', 'registry'); ?></h2>
-                    <p class="registry-card__lead"><?php esc_html_e('Controls whether the registry feature appears to customers and guests. Both options are on by default, so registries work the moment the plugin is active — no setup required.', 'registry'); ?></p>
+                    <p class="registry-card__lead"><?php esc_html_e('Controls whether the registry feature appears to customers and guests. Both options are on by default, so registries work the moment the plugin is active, no setup required.', 'registry'); ?></p>
                     <table class="form-table" role="presentation">
                         <tbody>
                             <tr>
@@ -107,7 +107,7 @@ final class Settings implements HasHooks
                                             <?php checked($this->settings->isEnabled(), true); ?> />
                                         <?php esc_html_e('Show gift registries on the storefront.', 'registry'); ?>
                                     </label>
-                                    <p class="description"><?php esc_html_e('Master switch. Turn off to hide everything at once — the "Add to registry" button on products, the My Account → Gift Registries area, and every shared public registry page stop rendering. Existing registries are kept and reappear when you switch this back on. On by default.', 'registry'); ?></p>
+                                    <p class="description"><?php esc_html_e('Master switch. Turn off to hide everything at once, the "Add to registry" button on products, the My Account → Gift Registries area, and every shared public registry page stop rendering. Existing registries are kept and reappear when you switch this back on. On by default.', 'registry'); ?></p>
                                 </td>
                             </tr>
                             <tr>
@@ -119,7 +119,7 @@ final class Settings implements HasHooks
                                             <?php checked($this->settings->allowsPurchase(), true); ?> />
                                         <?php esc_html_e('Let guests buy registry items straight from the shared page.', 'registry'); ?>
                                     </label>
-                                    <p class="description"><?php esc_html_e('On (recommended): a guest clicks "Buy this gift" on the registry and the item drops into their cart in one step. Off: the button instead sends them to the product page, where they choose options before adding to cart — useful for variable products that need a size or colour picked first. Has no effect unless gift registries are enabled above.', 'registry'); ?></p>
+                                    <p class="description"><?php esc_html_e('On (recommended): a guest clicks "Buy this gift" on the registry and the item drops into their cart in one step. Off: the button instead sends them to the product page, where they choose options before adding to cart, useful for variable products that need a size or colour picked first. Has no effect unless gift registries are enabled above.', 'registry'); ?></p>
                                     <p class="registry-example">
                                         <span class="registry-example__label"><?php esc_html_e('Guests reach a registry at a link like:', 'registry'); ?></span>
                                         <code class="registry-example__code"><?php echo esc_html(trailingslashit(home_url()) . _x('registry/emma-and-sam-wedding/', 'example registry share URL slug', 'registry')); ?></code>
