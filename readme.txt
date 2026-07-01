@@ -66,6 +66,11 @@ Yes, if "Allow direct purchase" is enabled in the settings. Otherwise the buy bu
 
 No. The public registry page is read-only for anyone with the link; only creating and editing registries requires a logged-in customer.
 
+
+= Does this plugin work on WordPress Multisite? =
+
+Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data.
+
 == Screenshots ==
 
 == External Services ==
