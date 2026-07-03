@@ -21,8 +21,15 @@ final class Settings implements HasHooks
     private const PAGE  = 'registry-settings';
     private const GROUP = 'registry_settings_group';
 
+    private ?ProUpsell $proUpsell = null;
+
     public function __construct(private readonly SettingsStore $settings)
     {
+    }
+
+    private function proUpsell(): ProUpsell
+    {
+        return $this->proUpsell ??= new ProUpsell();
     }
 
     public function registerHooks(): void
@@ -30,6 +37,7 @@ final class Settings implements HasHooks
         add_action('admin_menu', [$this, 'addMenuPage']);
         add_action('admin_init', [$this, 'registerSettings']);
         add_action('admin_enqueue_scripts', [$this, 'enqueueAssets']);
+        $this->proUpsell()->registerHooks();
     }
 
     public function enqueueAssets(string $hook): void
@@ -84,12 +92,15 @@ final class Settings implements HasHooks
         <div class="wrap registry-admin">
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 
+            <?php $this->proUpsell()->banner(); ?>
+
             <div class="registry-intro">
                 <h2><?php esc_html_e('Gift registries for your store', 'registry'); ?></h2>
                 <p><?php esc_html_e('Let logged-in customers build shareable gift registries for weddings, baby showers and other events. Guests open the shared link, see what is still needed, and buy directly, purchased quantities are tracked from orders so nobody double-buys.', 'registry'); ?></p>
                 <p><?php esc_html_e('Customers manage their registries under My Account → Gift Registries.', 'registry'); ?></p>
             </div>
 
+            <div class="registry-cols">
             <form method="post" action="options.php">
                 <?php settings_fields(self::GROUP); ?>
 
@@ -132,6 +143,11 @@ final class Settings implements HasHooks
 
                 <?php submit_button(); ?>
             </form>
+
+                <?php $this->proUpsell()->aside(); ?>
+            </div>
+
+            <?php $this->proUpsell()->cards(); ?>
         </div>
         <?php
     }
