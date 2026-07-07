@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 0.1.4
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,6 +81,9 @@ Yes. This plugin is compatible with WordPress Multisite. Network activate it or 
 Registry does not connect to any external service. It makes no outbound network requests and sends no data off your site. Registries are stored in WordPress as a `gift_registry` custom post type with `_registry_*` post meta (event type, event date, chosen items and purchased counts), and the plugin's settings live in the `registry_settings` and `registry_db_version` options. Purchase tracking reads from your own WooCommerce orders and records `_registry_id`, `_registry_purchased` and `_registry_counted` on the relevant order line items; everything stays in your database.
 
 == Changelog ==
+
+= 1.0.1 =
+* First stable release.
 
 = 0.1.4 =
 * `registry/purchase_recorded` and `registry/thankyou_purchase` actions after paid registry gifts are counted.
