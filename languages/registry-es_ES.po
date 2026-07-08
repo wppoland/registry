@@ -5,26 +5,26 @@ msgstr ""
 "Project-Id-Version: Registry - Gift Registry for WooCommerce 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/registry\n"
 "POT-Creation-Date: 2026-06-16T20:24:34+00:00\n"
-"PO-Revision-Date: 2026-06-15 00:00+0000\n"
-"Last-Translator: WPPoland <hello@plogins.com>\n"
-"Language-Team: Polish <pl_PL@li.org>\n"
-"Language: pl_PL\n"
+"PO-Revision-Date: 2026-06-16T20:24:34+00:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: registry\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
 #: registry.php
 msgid "Registry - Gift Registry for WooCommerce"
-msgstr "Registry - Lista prezentów dla WooCommerce"
+msgstr "Registro - Registro de regalos para WooCommerce"
 
 #. Plugin URI of the plugin
 #: registry.php
 msgid "https://plogins.com/registry/"
-msgstr "https://plogins.com/registry/"
+msgstr "https://plogins.com/es/registry/"
 
 #. Description of the plugin
 #: registry.php
@@ -32,8 +32,8 @@ msgid ""
 "Let customers create shareable gift registries for weddings, baby showers "
 "and events."
 msgstr ""
-"Pozwól klientom tworzyć udostępniane listy prezentów na śluby, baby shower i"
-" inne wydarzenia."
+"Permita que los clientes creen registros de regalos compartibles para bodas,"
+" baby showers y eventos."
 
 #. Author of the plugin
 #: registry.php
@@ -49,155 +49,155 @@ msgstr "https://plogins.com/"
 msgid ""
 "Registry - Gift Registry for WooCommerce requires WooCommerce to be active."
 msgstr ""
-"Registry - Lista prezentów dla WooCommerce wymaga aktywnej wtyczki "
-"WooCommerce."
+"Registro: el Registro de regalos para WooCommerce requiere que WooCommerce "
+"esté activo."
 
 #: src/Account/MyRegistries.php:73 src/Account/MyRegistries.php:79
 #: src/Admin/Settings.php:53 src/Admin/Settings.php:54
 #: src/PostType/GiftRegistry.php:57 src/PostType/GiftRegistry.php:59
 #: src/PostType/GiftRegistry.php:60
 msgid "Gift Registries"
-msgstr "Listy prezentów"
+msgstr "Registros de regalos"
 
 #: src/Account/MyRegistries.php:271
 msgid "Registry created."
-msgstr "Lista prezentów została utworzona."
+msgstr "Registro creado."
 
 #: src/Account/MyRegistries.php:272
 msgid "Registry updated."
-msgstr "Lista prezentów została zaktualizowana."
+msgstr "Registro actualizado."
 
 #: src/Account/MyRegistries.php:273
 msgid "Registry deleted."
-msgstr "Lista prezentów została usunięta."
+msgstr "Registro eliminado."
 
 #: src/Account/MyRegistries.php:274
 msgid "Sorry, that action could not be completed."
-msgstr "Niestety, nie udało się wykonać tej akcji."
+msgstr "Lo sentimos, esa acción no se pudo completar."
 
 #: src/Account/MyRegistries.php:299
 msgid ""
 "Create a gift registry, add the products you would love to receive, and "
 "share the link with friends and family."
 msgstr ""
-"Utwórz listę prezentów, dodaj produkty, które chciałbyś otrzymać, i "
-"udostępnij link rodzinie oraz znajomym."
+"Cree una lista de regalos, añade los productos que le encantaría recibir y "
+"comparta el enlace con amigos y familiares."
 
 #: src/Account/MyRegistries.php:303
 msgid "You have not created any registries yet."
-msgstr "Nie utworzyłeś jeszcze żadnej listy prezentów."
+msgstr "Aún no has creado ningún registro."
 
 #: src/Account/MyRegistries.php:308
 msgid "Registry"
-msgstr "Lista prezentów"
+msgstr "Registro"
 
 #: src/Account/MyRegistries.php:309
 msgid "Event"
-msgstr "Wydarzenie"
+msgstr "Evento"
 
 #: src/Account/MyRegistries.php:310 src/Account/MyRegistries.php:364
 msgid "Items"
-msgstr "Pozycje"
+msgstr "Artículos"
 
 #: src/Account/MyRegistries.php:311
 msgid "Actions"
-msgstr "Akcje"
+msgstr "Acciones"
 
 #: src/Account/MyRegistries.php:325
 msgid "Manage"
-msgstr "Zarządzaj"
+msgstr "Administrar"
 
 #: src/Account/MyRegistries.php:332
 msgid "Create a new registry"
-msgstr "Utwórz nową listę prezentów"
+msgstr "Crear un nuevo registro"
 
 #: src/Account/MyRegistries.php:347
 msgid "Back to all registries"
-msgstr "Powrót do wszystkich list prezentów"
+msgstr "Volver a todos los registros"
 
 #: src/Account/MyRegistries.php:352
 msgid "Shareable link:"
-msgstr "Link do udostępnienia:"
+msgstr "Enlace para compartir:"
 
 #: src/Account/MyRegistries.php:357
 msgid "Open"
-msgstr "Otwórz"
+msgstr "Abrir"
 
 #: src/Account/MyRegistries.php:361
 msgid "Event details"
-msgstr "Szczegóły wydarzenia"
+msgstr "Detalles del evento"
 
 #: src/Account/MyRegistries.php:366
 msgid "No items yet. Browse the shop and use \"Add to registry\" on a product."
 msgstr ""
-"Brak pozycji. Przeglądaj sklep i użyj opcji „Dodaj do listy prezentów” przy "
-"produkcie."
+"Aún no hay artículos. Explore la tienda y use \"Añadir al registro\" en un "
+"producto."
 
 #: src/Account/MyRegistries.php:375 src/Account/MyRegistries.php:391
 msgid "Product"
-msgstr "Produkt"
+msgstr "Producto"
 
 #: src/Account/MyRegistries.php:376 src/Account/MyRegistries.php:394
 msgid "Wanted"
-msgstr "Pożądane"
+msgstr "buscado"
 
 #: src/Account/MyRegistries.php:377 src/Account/MyRegistries.php:404
 msgid "Purchased"
-msgstr "Kupione"
+msgstr "Comprado"
 
 #: src/Account/MyRegistries.php:378
 msgid "Remove"
-msgstr "Usuń"
+msgstr "Eliminar"
 
 #: src/Account/MyRegistries.php:396
 msgid "Desired quantity"
-msgstr "Pożądana ilość"
+msgstr "Cantidad deseada"
 
 #. translators: %s: product name
 #: src/Account/MyRegistries.php:410
 #, php-format
 msgid "Remove %s"
-msgstr "Usuń %s"
+msgstr "Quitar %s"
 
 #: src/Account/MyRegistries.php:417
 msgid "Update quantities"
-msgstr "Zaktualizuj ilości"
+msgstr "Actualizar cantidades"
 
 #: src/Account/MyRegistries.php:421 src/Account/MyRegistries.php:427
 msgid "Delete registry"
-msgstr "Usuń listę prezentów"
+msgstr "Eliminar registro"
 
 #: src/Account/MyRegistries.php:423
 msgid "Delete this registry? This cannot be undone."
-msgstr "Usunąć tę listę prezentów? Tej operacji nie można cofnąć."
+msgstr "¿Eliminar este registro? Esto no se puede deshacer."
 
 #: src/Account/MyRegistries.php:446
 msgid "Registry name"
-msgstr "Nazwa listy prezentów"
+msgstr "Nombre de registro"
 
 #: src/Account/MyRegistries.php:449
 msgid "e.g. Anna & Tom’s Wedding"
-msgstr "np. Ślub Anny i Tomka"
+msgstr "p.ej. La boda de Anna y Tom"
 
 #: src/Account/MyRegistries.php:453
 msgid "Event type"
-msgstr "Typ wydarzenia"
+msgstr "Tipo de evento"
 
 #: src/Account/MyRegistries.php:464
 msgid "Event date"
-msgstr "Data wydarzenia"
+msgstr "Fecha del evento"
 
 #: src/Account/MyRegistries.php:471
 msgid "Create registry"
-msgstr "Utwórz listę prezentów"
+msgstr "Crear registro"
 
 #: src/Account/MyRegistries.php:471
 msgid "Save details"
-msgstr "Zapisz szczegóły"
+msgstr "Guardar detalles"
 
 #: src/Admin/Settings.php:88
 msgid "Gift registries for your store"
-msgstr "Listy prezentów dla Twojego sklepu"
+msgstr "Registros de regalo para tu tienda"
 
 #: src/Admin/Settings.php:89
 msgid ""
@@ -206,20 +206,20 @@ msgid ""
 "needed, and buy directly, purchased quantities are tracked from orders so "
 "nobody double-buys."
 msgstr ""
-"Pozwól zalogowanym klientom tworzyć udostępniane listy prezentów na śluby, "
-"baby shower i inne wydarzenia. Goście otwierają udostępniony link, widzą, "
-"czego jeszcze brakuje, i kupują bezpośrednio, kupione ilości są śledzone na "
-"podstawie zamówień, aby nikt nie kupił tego samego dwa razy."
+"Permita que los clientes que hayan iniciado sesión creen registros de "
+"regalos que se pueden compartir para bodas, baby showers y otros eventos. "
+"Los invitados abren el enlace compartido, ven lo que aún se necesita y "
+"compran directamente; las cantidades compradas se rastrean a partir de los "
+"pedidos para que nadie realice compras dobles."
 
 #: src/Admin/Settings.php:90
 msgid "Customers manage their registries under My Account → Gift Registries."
 msgstr ""
-"Klienci zarządzają swoimi listami prezentów w sekcji Moje konto → Listy "
-"prezentów."
+"Los clientes administran sus registros en Mi cuenta → Registros de regalo."
 
 #: src/Admin/Settings.php:97
 msgid "Storefront visibility"
-msgstr "Widoczność w sklepie"
+msgstr "Visibilidad del escaparate"
 
 #: src/Admin/Settings.php:98
 msgid ""
@@ -227,17 +227,18 @@ msgid ""
 "options are on by default, so registries work the moment the plugin is "
 "active, no setup required."
 msgstr ""
-"Kontroluje, czy funkcja rejestru jest widoczna dla klientów i gości. Obie "
-"opcje są domyślnie włączone, więc rejestry działają od momentu aktywacji "
-"wtyczki, nie jest wymagana żadna konfiguracja."
+"Controla si la función de registro aparece a los clientes e invitados. Ambas"
+" opciones están activadas de forma predeterminada, por lo que los registros "
+"funcionan en el momento en que el complemento está activo, sin necesidad de "
+"configuración."
 
 #: src/Admin/Settings.php:102
 msgid "Enable gift registries"
-msgstr "Włącz listy prezentów"
+msgstr "Habilitar registros de regalos"
 
 #: src/Admin/Settings.php:108
 msgid "Show gift registries on the storefront."
-msgstr "Wyświetlaj listy prezentów w sklepie."
+msgstr "Muestre listas de regalos en el escaparate."
 
 #: src/Admin/Settings.php:110
 msgid ""
@@ -246,21 +247,21 @@ msgid ""
 "public registry page stop rendering. Existing registries are kept and "
 "reappear when you switch this back on. On by default."
 msgstr ""
-"Przełącznik główny. Wyłącz, aby ukryć wszystko na raz, przycisk „Dodaj do "
-"rejestru” w produktach, obszar Moje konto → Rejestry prezentów i każda "
-"udostępniona strona rejestru publicznego przestają się renderować. "
-"Istniejące rejestry zostaną zachowane i pojawią się ponownie po ponownym "
-"włączeniu tej opcji. Domyślnie włączone."
+"Interruptor maestro. Desactívelo para ocultar todo a la vez, el botón "
+"\"Añadir al registro\" en los productos, el área Mi cuenta → Registros de "
+"regalo y todas las páginas de registro público compartidas dejan de "
+"mostrarse. Los registros existentes se conservan y reaparecen cuando vuelve "
+"a activarlo. Activado de forma predeterminada."
 
 #: src/Admin/Settings.php:114
 msgid "Allow direct purchase"
-msgstr "Zezwól na zakup bezpośredni"
+msgstr "Permitir compra directa"
 
 #: src/Admin/Settings.php:120
 msgid "Let guests buy registry items straight from the shared page."
 msgstr ""
-"Pozwól gościom kupować elementy rejestru bezpośrednio z udostępnionej "
-"strony."
+"Permita que los invitados compren artículos de registro directamente desde "
+"la página compartida."
 
 #: src/Admin/Settings.php:122
 msgid ""
@@ -270,117 +271,100 @@ msgid ""
 " for variable products that need a size or colour picked first. Has no "
 "effect unless gift registries are enabled above."
 msgstr ""
-"Włączone (zalecane): gość klika „Kup ten prezent” w rejestrze, a przedmiot "
-"wpada do jego koszyka w jednym kroku. Wyłączone: zamiast tego przycisk "
-"odsyła ich do strony produktu, gdzie wybierają opcje przed dodaniem do "
-"koszyka, co jest przydatne w przypadku produktów o zmiennej charakterystyce,"
-" które wymagają najpierw wybrania rozmiaru lub koloru. Nie ma żadnego "
-"efektu, chyba że powyżej włączono rejestrowanie prezentów."
+"Activado (recomendado): un invitado hace clic en \"Comprar este regalo\" en "
+"el registro y el artículo llega a su carrito en un solo paso. Desactivado: "
+"el botón los envía a la página del producto, donde eligen opciones antes de "
+"agregarlas al carrito, lo cual es útil para productos variables que "
+"necesitan elegir primero un tamaño o color. No tiene ningún efecto a menos "
+"que las listas de regalos estén habilitadas arriba."
 
 #: src/Admin/Settings.php:124
 msgid "Guests reach a registry at a link like:"
-msgstr "Goście docierają do rejestru pod linkiem takim jak:"
+msgstr "Los invitados llegan a un registro en un enlace como:"
 
 #: src/Admin/Settings.php:125
 msgctxt "example registry share URL slug"
 msgid "registry/emma-and-sam-wedding/"
-msgstr "rejestr/ślub-emmy-i-sam/"
+msgstr "registro/boda-emma-y-sam/"
 
 #: src/PostType/GiftRegistry.php:58
 msgid "Gift Registry"
-msgstr "Lista prezentów"
+msgstr "Registro de regalos"
 
 #: src/PostType/GiftRegistry.php:61 src/PostType/GiftRegistry.php:62
 msgid "View Gift Registry"
-msgstr "Zobacz listę prezentów"
+msgstr "Ver registro de regalos"
 
 #: src/PostType/GiftRegistry.php:63
 msgid "Search gift registries"
-msgstr "Szukaj list prezentów"
+msgstr "Buscar registros de regalos"
 
 #: src/PostType/GiftRegistry.php:64
 msgid "No gift registries found."
-msgstr "Nie znaleziono list prezentów."
+msgstr "No se encontraron registros de regalos."
 
 #: src/PostType/GiftRegistry.php:171
 msgid "Wedding"
-msgstr "Ślub"
+msgstr "boda"
 
 #: src/PostType/GiftRegistry.php:172
 msgid "Baby shower"
-msgstr "Przyjęcie przedporodowe"
+msgstr "baby shower"
 
 #: src/PostType/GiftRegistry.php:173
 msgid "Birthday"
-msgstr "Urodziny"
+msgstr "Cumpleaños"
 
 #: src/PostType/GiftRegistry.php:174
 msgid "Housewarming"
-msgstr "Parapetówka"
+msgstr "inauguración de la casa"
 
 #: src/PostType/GiftRegistry.php:175
 msgid "Other"
-msgstr "Inne"
+msgstr "Otro"
 
 #: src/Service/AddToRegistry.php:79
 msgid "Create a gift registry"
-msgstr "Utwórz listę prezentów"
+msgstr "Crear una lista de regalos"
 
 #: src/Service/AddToRegistry.php:80
 msgid "to add this product."
-msgstr "aby dodać ten produkt."
+msgstr "para añadir este producto."
 
 #: src/Service/AddToRegistry.php:87
 msgid "Add to gift registry"
-msgstr "Dodaj do listy prezentów"
+msgstr "Añadir a la lista de regalos"
 
 #: src/Service/AddToRegistry.php:98
 msgid "Add to registry"
-msgstr "Dodaj do listy prezentów"
+msgstr "Añadir al registro"
 
 #: src/Service/PublicView.php:83
 msgid "This gift registry is not available."
-msgstr "Ta lista prezentów jest niedostępna."
+msgstr "Esta lista de regalos no está disponible."
 
 #: src/Service/PublicView.php:112
 msgid "No items have been added to this registry yet."
-msgstr "Do tej listy prezentów nie dodano jeszcze żadnych pozycji."
+msgstr "Aún no se han agregado elementos a este registro."
 
 #. translators: 1: purchased count, 2: desired count
 #: src/Service/PublicView.php:148
 #, php-format
 msgid "%1$d of %2$d purchased"
-msgstr "Kupiono %1$d z %2$d"
+msgstr "%1$d de %2$d comprado"
 
 #: src/Service/PublicView.php:174 src/Service/PublicView.php:175
 msgid "Fully purchased"
-msgstr "W pełni wykupione"
+msgstr "Totalmente comprado"
 
 #: src/Service/PublicView.php:180
 msgid "View product"
-msgstr "Zobacz produkt"
+msgstr "Ver producto"
 
 #: src/Service/PublicView.php:194
 msgid "Buy this gift"
-msgstr "Kup ten prezent"
+msgstr "Compra este regalo"
 
 #: src/Service/RegistryManager.php:40
 msgid "My gift registry"
-msgstr "Moja lista prezentów"
-
-#~ msgid "General"
-#~ msgstr "Ogólne"
-
-#~ msgid ""
-#~ "The master switch. When off, the storefront button, the My Account area and "
-#~ "public registry pages are not rendered."
-#~ msgstr ""
-#~ "Przełącznik główny. Po wyłączeniu przycisk w sklepie, sekcja Moje konto oraz"
-#~ " publiczne strony list prezentów nie są wyświetlane."
-
-#~ msgid "Let guests buy registry items directly from the shared page."
-#~ msgstr ""
-#~ "Pozwól gościom kupować pozycje z listy bezpośrednio z udostępnionej strony."
-
-#~ msgid "When off, guests are sent to the product page instead."
-#~ msgstr "Po wyłączeniu goście są przekierowywani na stronę produktu."
+msgstr "mi lista de regalos"
