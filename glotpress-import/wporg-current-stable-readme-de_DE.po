@@ -1,0 +1,73 @@
+# wp.org Stable Readme translation (de_DE)
+msgid ""
+msgstr ""
+"Project-Id-Version: registry Stable Readme\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: plogins-i18n\n"
+
+msgid "Requires Plugins: woocommerce"
+msgstr "Erfordert Plugins: woocommerce"
+
+msgid "Let customers create shareable gift registries for weddings, baby showers and events, with purchase tracking so guests never double-buy."
+msgstr "Ermögliche deinen Kunden, gemeinsam nutzbare Geschenklisten für Hochzeiten, Babypartys und Veranstaltungen zu erstellen, mit Kaufverfolgung, damit Gäste nie doppelt kaufen."
+
+msgid "Registry adds gift registries to your WooCommerce store. A logged-in customer creates a named registry for an event (wedding, baby shower, birthday, housewarming or other), picks the products they want from the shop, and gets a shareable link to send to friends and family."
+msgstr "Registry fügt deinem WooCommerce-Shop Geschenklisten hinzu. Ein angemeldeter Kunde erstellt eine benannte Registrierung für eine Veranstaltung (Hochzeit, Babyparty, Geburtstag, Einweihungsfeier oder anderes), wählt die gewünschten Produkte aus dem Shop aus und erhält einen gemeinsam nutzbaren Link, den er an Freunde und Familie senden kann."
+
+msgid "Guests open that link, see which items are still needed, and buy a gift. Purchased quantities are counted from real WooCommerce orders, so anything already bought is marked as fully purchased and two people don't buy the same thing twice."
+msgstr "Gäste öffnen diesen Link, sehen, welche Artikel noch benötigt werden, und kaufen ein Geschenk. Gekaufte Mengen werden anhand echter WooCommerce-Bestellungen gezählt, sodass alles, was bereits gekauft wurde, als vollständig gekauft markiert wird und zwei Personen nicht zweimal dasselbe kaufen."
+
+msgid "Source and issue tracker live on GitHub: https://github.com/wppoland/registry"
+msgstr "Quellen- und Issue-Tracker live auf GitHub: https://github.com/wppoland/registry"
+
+msgid "* <strong>Documentation</strong> - https://plogins.com/registry/docs/\n* <strong>Plugin page</strong> - https://plogins.com/registry/\n* <strong>Source code</strong> - https://github.com/wppoland/registry\n* <strong>Bug reports and feature requests</strong> - https://github.com/wppoland/registry/issues\n* <strong>Discussions and questions</strong> - https://github.com/wppoland/registry/discussions"
+msgstr "* <strong>Dokumentation</strong> - https://plogins.com/de/registry/docs/\n* <strong>Plugin-Seite</strong> - https://plogins.com/de/registry/\n* <strong>Quellcode</strong> – https://github.com/wppoland/registry\n* <strong>Fehlerberichte und Funktionsanfragen</strong> – https://github.com/wppoland/registry/issues\n* <strong>Diskussionen und Fragen</strong> – https://github.com/wppoland/registry/discussions"
+
+msgid "* Customers create and manage their registries under My Account → Gift Registries.\n* Each registry has an event type (wedding, baby shower, birthday, housewarming, other) and an event date.\n* An \"Add to gift registry\" control on single product pages, with a per-item desired quantity.\n* A public, read-only registry page on its own permalink, made for sharing.\n* Purchased quantities are read back from paid WooCommerce orders, so remaining counts stay current without manual updates.\n* Optional direct purchase from the shared page; with it off, guests are sent to the product page instead.\n* Every action checks registry ownership, so one customer can never edit another's registry."
+msgstr "* Kunden erstellen und verwalten ihre Registrierungen unter „Mein Konto“ → „Geschenklisten“.\n* Jede Registrierung hat einen Veranstaltungstyp (Hochzeit, Babyparty, Geburtstag, Einweihungsfeier, Sonstiges) und ein Veranstaltungsdatum.\n* Ein Steuerelement „Zur Geschenkliste hinzufügen“ auf einzelnen Produktseiten mit einer gewünschten Menge pro Artikel.\n* Eine öffentliche, schreibgeschützte Registrierungsseite mit eigenem Permalink, die zum Teilen bestimmt ist.\n* Gekaufte Mengen werden aus bezahlten WooCommerce-Bestellungen zurückgelesen, sodass die verbleibenden Zählungen ohne manuelle Aktualisierungen aktuell bleiben.\n* Optionaler Direktkauf über die geteilte Seite; Wenn diese Option deaktiviert ist, werden Gäste stattdessen zur Produktseite weitergeleitet.\n* Bei jeder Aktion wird der Registrierungsbesitz überprüft, sodass ein Kunde niemals die Registrierung eines anderen bearbeiten kann."
+
+msgid "1. Upload the plugin to `/wp-content/plugins/registry`, or install via Plugins → Add New.\n2. Activate it. WooCommerce must be installed and active.\n3. Registries are on by default. Visit WooCommerce → Gift Registries to turn them off or to choose whether guests can buy directly from the shared page."
+msgstr "1. Lade das Plugin nach „/wp-content/plugins/registry“ hoch oder installiere es über Plugins → Neu hinzufügen.\n2. Aktiviere es. WooCommerce muss installiert und aktiv sein.\n3. Registrierungen sind standardmäßig aktiviert. Besuche WooCommerce → Geschenklisten, um sie zu deaktivieren oder auszuwählen, ob Gäste direkt auf der freigegebenen Seite einkaufen können."
+
+msgid "Yes. WooCommerce must be installed and active."
+msgstr "Ja. WooCommerce muss installiert und aktiv sein."
+
+msgid "Any logged-in customer, from the My Account → Gift Registries area."
+msgstr "Jeder eingeloggte Kunde über den Bereich „Mein Konto“ → „Geschenklisten“."
+
+msgid "When a gift is bought through a registry, the registry it belongs to is stored on the order line item. When that order reaches processing or completed, the quantity is added to the registry's purchased count, and the public page subtracts it from what's still needed. Each order is only counted once."
+msgstr "Wenn ein Geschenk über eine Registrierung gekauft wird, wird die Registrierung, zu der es gehört, in der Bestellposition gespeichert. Wenn die Bestellung bearbeitet oder abgeschlossen wird, wird die Menge zum Kaufzähler der Registrierungsstelle addiert und auf der öffentlichen Seite von dem noch benötigten Betrag abgezogen. Jede Bestellung wird nur einmal gezählt."
+
+msgid "Yes, if \"Allow direct purchase\" is enabled in the settings. Otherwise the buy button sends guests to the product page."
+msgstr "Ja, wenn in den Einstellungen „Direktkauf zulassen“ aktiviert ist. Andernfalls leitet der Kaufen-Button die Gäste zur Produktseite weiter."
+
+msgid "No. The public registry page is read-only for anyone with the link; only creating and editing registries requires a logged-in customer."
+msgstr "Nein. Die Seite des öffentlichen Registers ist für jeden, der über den Link verfügt, schreibgeschützt; Lediglich zum Erstellen und Bearbeiten von Registern ist ein angemeldeter Kunde erforderlich."
+
+msgid "Yes. This plugin is compatible with WordPress Multisite. Network activate it or activate it on individual sites; each site keeps its own settings and data."
+msgstr "Ja. Dieses Plugin ist mit WordPress Multisite kompatibel. Aktiviere es im Netzwerk oder auf einzelnen Websites. Jede Site behält ihre eigenen Einstellungen und Daten."
+
+msgid "1. On the storefront.\n2. Settings in the WordPress admin.\n3. On a mobile device."
+msgstr "1. Im Schaufenster.\n2. Einstellungen im WordPress-Admin.\n3. Auf einem mobilen Gerät."
+
+msgid "Registry does not connect to any external service. It makes no outbound network requests and sends no data off your site. Registries are stored in WordPress as a `gift_registry` custom post type with `_registry_*` post meta (event type, event date, chosen items and purchased counts), and the plugin's settings live in the `registry_settings` and `registry_db_version` options. Purchase tracking reads from your own WooCommerce orders and records `_registry_id`, `_registry_purchased` and `_registry_counted` on the relevant order line items; everything stays in your database."
+msgstr "Die Registrierung stellt keine Verbindung zu einem externen Dienst her. Es werden keine ausgehenden Netzwerkanfragen gestellt und keine Daten von deiner Website gesendet. Registrierungen werden in WordPress als benutzerdefinierter Beitragstyp „gift_registry“ mit dem Beitrags-Meta „_registry_*“ (Ereignistyp, Ereignisdatum, ausgewählte Artikel und gekaufte Anzahl) gespeichert und die Einstellungen des Plugins befinden sich in den Optionen „registry_settings“ und „registry_db_version“. Die Kaufverfolgung liest aus deinen eigenen WooCommerce-Bestellungen und zeichnet „_registry_id“, „_registry_purchased“ und „_registry_counted“ in den relevanten Bestellpositionen auf; alles bleibt in deiner Datenbank."
+
+msgid "* First stable release."
+msgstr "* Erste stabile Version."
+
+msgid "* `registry/purchase_recorded` and `registry/thankyou_purchase` actions after paid registry gifts are counted.\n* `registry/theme`, `registry/theme_vars` filters and `registry/public_hero` action for PRO registry themes."
+msgstr "* Die Aktionen „registry/purchase_recorded“ und „registry/thankyou_purchase“ nach bezahlten Registrierungsgeschenken werden gezählt.\n* Filter „registry/theme“, „registry/theme_vars“ und Aktion „registry/public_hero“ für PRO-Registrierungsthemen."
+
+msgid "* Add registry/can_manage, registry/can_delete, registry/user_registries and registry/is_owner filters for shared registries.\n* Add registry/account/single_registry action, registry/account/notices filter and _registry_contributors meta helper for co-owned lists."
+msgstr "* Füge die Filter „registry/can_manage“, „registry/can_delete“, „registry/user_registries“ und „registry/is_owner“ für gemeinsam genutzte Registrierungen hinzu.\n* Füge die Aktion „registry/account/single_registry“, den Filter „registry/account/notices“ und den Meta-Helper „_registry_contributors“ für Listen mit gemeinsamem Besitz hinzu."
+
+msgid "* Add registry/max_registries_limit filter.\n* Add registry limit checks and notices in My Account."
+msgstr "* Registry/max_registries_limit-Filter hinzufügen.\n* Füge in „Mein Konto“ Überprüfungen und Hinweise zum Registrierungslimit hinzu."
+
+msgid "* Initial release."
+msgstr "* Erstveröffentlichung."
+
