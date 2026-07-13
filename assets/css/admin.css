@@ -79,22 +79,3 @@
 	padding: 0.1em 0.5em;
 	color: #8a1d4b; /* deeper rose — 7.90:1 on the tint, well past AA */
 }
-
-@media (prefers-color-scheme: dark) {
-	.registry-admin {
-		--registry-card-bg: #1e1e1e;
-		--registry-card-border: #3c3c3c;
-		--registry-muted: #bbb;
-		/* Lifted rose so the accent stays vivid against dark surfaces. */
-		--registry-accent: #ec6da3;
-		--registry-accent-tint: #2a1b22;
-	}
-
-	.registry-intro {
-		background: linear-gradient(135deg, var(--registry-accent-tint), #1e1e1e);
-	}
-
-	.registry-example__code {
-		color: #f1a9c6; /* light rose on the dark tint — 8.79:1, past AA */
-	}
-}
