@@ -1,4 +1,4 @@
-# Files excluded from the wp.org build. This plugin is self-contained — it has no
+# Files excluded from the wp.org build. This plugin is self-contained, it has no
 # runtime Composer dependencies, so /vendor holds only dev tooling and is excluded.
 # autoload.php ships its own PSR-4 fallback loader, so the plugin boots without it.
 /vendor
