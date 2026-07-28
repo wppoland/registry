@@ -81,7 +81,7 @@
 }
 
 /* ------------------------------------------------------------------ *
- * PRO upsell — dismissible banner, sidebar promo, "what PRO adds"
+ * PRO upsell, dismissible banner, sidebar promo, "what PRO adds"
  * locked cards. Pure advertising (no disabled inputs), scoped to
  * .registry-admin, using the plugin's own ribbon-rose accent. All
  * text and buttons use a fixed deep rose (#8a1d4b) so white/coloured
@@ -136,7 +136,7 @@
 .registry-admin .registry-pro-banner__cta.button-primary:hover,
 .registry-admin .registry-pro-aside__cta.button-primary:hover { background: color-mix(in srgb, var(--registry-accent-text) 85%, #000); }
 
-/* Sidebar promo card — forced light so the fixed text colours stay AA in any admin scheme. */
+/* Sidebar promo card, forced light so the fixed text colours stay AA in any admin scheme. */
 .registry-admin .registry-pro-aside {
 	background: #fff;
 	border: 1px solid #dcdcde;
