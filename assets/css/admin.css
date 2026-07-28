@@ -1,10 +1,10 @@
 /**
- * Registry — admin settings styles. A polished, dark-mode-aware card layout.
+ * Registry, admin settings styles. A polished, dark-mode-aware card layout.
  *
  * The one distinctive touch is the family accent: the same ribbon-rose used on
  * the storefront registry (#ad275f) appears as a thin section rule, so the
  * admin screen reads as part of the same product. It is used only for borders
- * and large headings — never as small body text — and the chosen rose clears
+ * and large headings, never as small body text, and the chosen rose clears
  * WCAG AA on both admin surfaces: 6.50:1 on card white (#fff) and 5.70:1 on the
  * wp-admin grey (#f0f0f1), comfortably past the 4.5:1 text / 3:1 UI floors.
  */
@@ -13,7 +13,7 @@
 	--registry-card-bg: #fff;
 	--registry-card-border: #dcdcde;
 	--registry-muted: #50575e;
-	/* Ribbon-rose — matches the storefront registry accent for family consistency. */
+	/* Ribbon-rose, matches the storefront registry accent for family consistency. */
 	--registry-accent: #ad275f;
 	--registry-accent-tint: #fbeef3;
 	max-width: 880px;
@@ -77,5 +77,5 @@
 	border: 1px solid var(--registry-card-border);
 	border-radius: 6px;
 	padding: 0.1em 0.5em;
-	color: #8a1d4b; /* deeper rose — 7.90:1 on the tint, well past AA */
+	color: #8a1d4b; /* deeper rose, 7.90:1 on the tint, well past AA */
 }

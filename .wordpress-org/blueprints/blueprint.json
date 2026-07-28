@@ -1,7 +1,7 @@
 {
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
   "meta": {
-    "title": "Registry - Gift Registry for WooCommerce — Live Preview",
+    "title": "Registry - Gift Registry for WooCommerce, Live Preview",
     "author": "WPPoland"
   },
   "landingPage": "/wp-admin/admin.php?page=registry-settings",

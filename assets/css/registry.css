@@ -1,5 +1,5 @@
 /**
- * Registry — storefront styles (public registry, My Account area, add-to-registry).
+ * Registry, storefront styles (public registry, My Account area, add-to-registry).
  * Uses CSS custom properties so themes can override; motion is guarded by
  * prefers-reduced-motion; layout avoids cumulative layout shift.
  */
@@ -12,7 +12,7 @@
 	--registry-muted: color-mix(in srgb, currentColor 62%, transparent);
 	/*
 	 * Ribbon-rose: the colour of gift ribbon and celebration. Themeable, but it
-	 * falls back to a warm registry hue rather than a generic dashboard blue —
+	 * falls back to a warm registry hue rather than a generic dashboard blue, 
 	 * this is a shared gift list, not an admin panel.
 	 */
 	--registry-accent: var(--wp--preset--color--primary, #ad275f);
@@ -83,7 +83,7 @@
 }
 
 /*
- * THE MOMENT — the gift "fills up" as guests claim it. A ribbon channel runs
+ * THE MOMENT, the gift "fills up" as guests claim it. A ribbon channel runs
  * down the inner edge of every card; it floods upward from the bottom in
  * proportion to how many gifts have been bought (--registry-fill, 0..1). The
  * empty track is faint; the filled ribbon is warm rose with a soft sateen
@@ -128,7 +128,7 @@
 }
 
 /*
- * When a wish is fully claimed it gets a ribbon-bow seal in the top corner —
+ * When a wish is fully claimed it gets a ribbon-bow seal in the top corner, 
  * the gift is tied off. The bow cinches tight once on entry (one earned beat).
  */
 .registry-public__seal {

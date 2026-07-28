@@ -36,7 +36,7 @@ final class PublicView implements HasHooks
 
     /**
      * Register (not enqueue) the stylesheet up front. render() enqueues it only
-     * when a registry is actually output — WP prints styles enqueued during
+     * when a registry is actually output, WP prints styles enqueued during
      * the_loop in the footer.
      */
     public function registerAssets(): void

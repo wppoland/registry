@@ -19,7 +19,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: registry.php
 msgid "Registry - Gift Registry for WooCommerce"
-msgstr "Registry – Geschenkliste für WooCommerce"
+msgstr "Registry, Geschenkliste für WooCommerce"
 
 #. Plugin URI of the plugin
 #: registry.php
@@ -49,7 +49,7 @@ msgstr "https://plogins.com/"
 msgid ""
 "Registry - Gift Registry for WooCommerce requires WooCommerce to be active."
 msgstr ""
-"Registry – Geschenkliste für WooCommerce erfordert, dass WooCommerce aktiv "
+"Registry, Geschenkliste für WooCommerce erfordert, dass WooCommerce aktiv "
 "ist."
 
 #: src/Account/MyRegistries.php:73 src/Account/MyRegistries.php:79
