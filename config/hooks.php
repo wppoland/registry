@@ -5,7 +5,7 @@
  * Registry\Contract\HasHooks and be registered in config/services.php.
  *
  * Admin-only services are appended only in wp-admin, where they are registered
- * in the container — listing them on the front end would throw.
+ * in the container, listing them on the front end would throw.
  *
  * @package Registry
  *

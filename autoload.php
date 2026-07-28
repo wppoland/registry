@@ -2,7 +2,7 @@
 /**
  * Autoloading: prefer Composer's optimized classmap when present, otherwise fall
  * back to a minimal PSR-4 autoloader so the plugin still boots if vendor/ is
- * somehow absent. This plugin is self-contained — no external runtime packages.
+ * somehow absent. This plugin is self-contained, no external runtime packages.
  *
  * @package Registry
  */

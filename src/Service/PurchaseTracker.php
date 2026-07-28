@@ -16,7 +16,7 @@ defined('ABSPATH') || exit;
  *
  * When a guest adds a registry item to the cart from a public registry page the
  * registry ID is carried as cart item data, persisted onto the order line item,
- * and — once the order reaches a paid status — folded into a per-registry
+ * and, once the order reaches a paid status, folded into a per-registry
  * purchased-quantity map stored as post meta. The map is keyed by product ID so
  * lookups on the public page are O(1) with no extra queries.
  */
