@@ -15,7 +15,7 @@ defined('ABSPATH') || exit;
  * publicly readable via a clean permalink so it can be shared with guests, but
  * it is not editable from the front end except by its owner through the plugin's
  * own controlled flows. Items and event metadata live in post meta. The CPT is
- * deliberately kept out of the public archive/search listings — registries are
+ * deliberately kept out of the public archive/search listings, registries are
  * only reachable by their direct, shareable link.
  */
 final class GiftRegistry implements HasHooks
