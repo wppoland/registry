@@ -167,7 +167,7 @@ final class MyRegistries implements HasHooks
      */
     private function doCreate(int $userId, array $data): void
     {
-        $limit = (int) apply_filters('registry/max_registries_limit', 1, $userId);
+        $limit = (int) apply_filters('registry/max_registries_limit', 0, $userId);
         $registries = $this->manager->forUser($userId);
 
         if ($limit > 0 && count($registries) >= $limit) {
@@ -309,7 +309,7 @@ final class MyRegistries implements HasHooks
 
     private function renderList(int $userId): void
     {
-        $limit      = (int) apply_filters('registry/max_registries_limit', 1, $userId);
+        $limit      = (int) apply_filters('registry/max_registries_limit', 0, $userId);
         $registries = $this->manager->forUser($userId);
         ?>
         <p class="registry-account__intro">
@@ -357,7 +357,8 @@ final class MyRegistries implements HasHooks
                     'registry/limit_notice_html',
                     sprintf(
                         /* translators: %d: registries limit */
-                        __('You have reached the limit of %d gift registry. Upgrade to Registry Pro to create multiple gift registries.', 'registry'),
+                        /* translators: %d: the registry limit a site owner set with the registry/max_registries_limit filter. */
+                        __('You have reached the limit of %d gift registry set by this store.', 'registry'),
                         $limit
                     )
                 );
