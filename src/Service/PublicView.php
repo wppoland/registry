@@ -80,7 +80,7 @@ final class PublicView implements HasHooks
         $post = get_post($registryId);
 
         if (! $post instanceof \WP_Post || GiftRegistry::POST_TYPE !== $post->post_type || 'publish' !== $post->post_status) {
-            return $this->notice(__('This gift registry is not available.', 'registry'));
+            return $this->notice(__('This gift registry is not available.', 'plogins-registry'));
         }
 
         wp_enqueue_style('registry');
@@ -152,7 +152,7 @@ final class PublicView implements HasHooks
             </header>
 
             <?php if ([] === $items) : ?>
-                <?php echo $this->notice(__('No items have been added to this registry yet.', 'registry')); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- notice() escapes. ?>
+                <?php echo $this->notice(__('No items have been added to this registry yet.', 'plogins-registry')); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- notice() escapes. ?>
             <?php else : ?>
                 <ul class="registry-public__items">
                     <?php foreach ($items as $productId => $desired) : ?>
@@ -188,7 +188,7 @@ final class PublicView implements HasHooks
                                     <?php
                                     printf(
                                         /* translators: 1: purchased count, 2: desired count */
-                                        esc_html__('%1$d of %2$d purchased', 'registry'),
+                                        esc_html__('%1$d of %2$d purchased', 'plogins-registry'),
                                         (int) $bought,
                                         (int) $desired,
                                     );
@@ -214,13 +214,13 @@ final class PublicView implements HasHooks
     {
         if ($remaining <= 0) {
             return '<span class="registry-public__fulfilled" aria-label="' .
-                esc_attr__('Fully purchased', 'registry') . '">' .
-                esc_html__('Fully purchased', 'registry') . '</span>';
+                esc_attr__('Fully purchased', 'plogins-registry') . '">' .
+                esc_html__('Fully purchased', 'plogins-registry') . '</span>';
         }
 
         if (! $this->settings->allowsPurchase() || ! $product->is_purchasable() || ! $product->is_in_stock()) {
             return '<a class="button" href="' . esc_url((string) get_permalink($product->get_id())) . '">' .
-                esc_html__('View product', 'registry') . '</a>';
+                esc_html__('View product', 'plogins-registry') . '</a>';
         }
 
         $url = add_query_arg(
@@ -234,7 +234,7 @@ final class PublicView implements HasHooks
         return sprintf(
             '<a class="button registry-public__buy" href="%1$s">%2$s</a>',
             esc_url($url),
-            esc_html__('Buy this gift', 'registry'),
+            esc_html__('Buy this gift', 'plogins-registry'),
         );
     }
 

@@ -70,13 +70,13 @@ final class MyRegistries implements HasHooks
 
         foreach ($items as $key => $label) {
             if ('customer-logout' === $key) {
-                $reordered[self::ENDPOINT] = __('Gift Registries', 'registry');
+                $reordered[self::ENDPOINT] = __('Gift Registries', 'plogins-registry');
             }
             $reordered[$key] = $label;
         }
 
         if (! isset($reordered[self::ENDPOINT])) {
-            $reordered[self::ENDPOINT] = __('Gift Registries', 'registry');
+            $reordered[self::ENDPOINT] = __('Gift Registries', 'plogins-registry');
         }
 
         return $reordered;
@@ -276,11 +276,11 @@ final class MyRegistries implements HasHooks
         }
 
         $map = [
-            'created'       => __('Registry created.', 'registry'),
-            'updated'       => __('Registry updated.', 'registry'),
-            'deleted'       => __('Registry deleted.', 'registry'),
-            'limit_reached' => __('You have reached the maximum number of gift registries allowed.', 'registry'),
-            'error'         => __('Sorry, that action could not be completed.', 'registry'),
+            'created'       => __('Registry created.', 'plogins-registry'),
+            'updated'       => __('Registry updated.', 'plogins-registry'),
+            'deleted'       => __('Registry deleted.', 'plogins-registry'),
+            'limit_reached' => __('You have reached the maximum number of gift registries allowed.', 'plogins-registry'),
+            'error'         => __('Sorry, that action could not be completed.', 'plogins-registry'),
         ];
 
         /**
@@ -313,19 +313,19 @@ final class MyRegistries implements HasHooks
         $registries = $this->manager->forUser($userId);
         ?>
         <p class="registry-account__intro">
-            <?php esc_html_e('Create a gift registry, add the products you would love to receive, and share the link with friends and family.', 'registry'); ?>
+            <?php esc_html_e('Create a gift registry, add the products you would love to receive, and share the link with friends and family.', 'plogins-registry'); ?>
         </p>
 
         <?php if ([] === $registries) : ?>
-            <p><?php esc_html_e('You have not created any registries yet.', 'registry'); ?></p>
+            <p><?php esc_html_e('You have not created any registries yet.', 'plogins-registry'); ?></p>
         <?php else : ?>
             <table class="registry-account__table shop_table">
                 <thead>
                     <tr>
-                        <th><?php esc_html_e('Registry', 'registry'); ?></th>
-                        <th><?php esc_html_e('Event', 'registry'); ?></th>
-                        <th><?php esc_html_e('Items', 'registry'); ?></th>
-                        <th><span class="screen-reader-text"><?php esc_html_e('Actions', 'registry'); ?></span></th>
+                        <th><?php esc_html_e('Registry', 'plogins-registry'); ?></th>
+                        <th><?php esc_html_e('Event', 'plogins-registry'); ?></th>
+                        <th><?php esc_html_e('Items', 'plogins-registry'); ?></th>
+                        <th><span class="screen-reader-text"><?php esc_html_e('Actions', 'plogins-registry'); ?></span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -339,7 +339,7 @@ final class MyRegistries implements HasHooks
                             <td><a href="<?php echo esc_url($manageUrl); ?>"><?php echo esc_html(get_the_title($registry)); ?></a></td>
                             <td><?php echo esc_html(GiftRegistry::eventTypeLabel($eventType)); ?></td>
                             <td><?php echo esc_html((string) $itemCount); ?></td>
-                            <td><a class="button" href="<?php echo esc_url($manageUrl); ?>"><?php esc_html_e('Manage', 'registry'); ?></a></td>
+                            <td><a class="button" href="<?php echo esc_url($manageUrl); ?>"><?php esc_html_e('Manage', 'plogins-registry'); ?></a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -347,7 +347,7 @@ final class MyRegistries implements HasHooks
         <?php endif; ?>
 
         <?php if ($limit <= 0 || count($registries) < $limit) : ?>
-            <h3><?php esc_html_e('Create a new registry', 'registry'); ?></h3>
+            <h3><?php esc_html_e('Create a new registry', 'plogins-registry'); ?></h3>
             <?php $this->renderDetailsForm('create', 0, '', 'wedding', ''); ?>
         <?php else : ?>
             <div class="woocommerce-info">
@@ -358,7 +358,7 @@ final class MyRegistries implements HasHooks
                     sprintf(
                         /* translators: %d: registries limit */
                         /* translators: %d: the registry limit a site owner set with the registry/max_registries_limit filter. */
-                        __('You have reached the limit of %d gift registry set by this store.', 'registry'),
+                        __('You have reached the limit of %d gift registry set by this store.', 'plogins-registry'),
                         $limit
                     )
                 );
@@ -378,26 +378,26 @@ final class MyRegistries implements HasHooks
         $shareUrl  = (string) get_permalink($registryId);
         $listUrl   = wc_get_account_endpoint_url(self::ENDPOINT);
         ?>
-        <p><a href="<?php echo esc_url($listUrl); ?>">&larr; <?php esc_html_e('Back to all registries', 'registry'); ?></a></p>
+        <p><a href="<?php echo esc_url($listUrl); ?>">&larr; <?php esc_html_e('Back to all registries', 'plogins-registry'); ?></a></p>
 
         <h3><?php echo esc_html($title); ?></h3>
 
         <p class="registry-account__share">
-            <label for="registry-share-url"><?php esc_html_e('Shareable link:', 'registry'); ?></label>
+            <label for="registry-share-url"><?php esc_html_e('Shareable link:', 'plogins-registry'); ?></label>
             <input type="url" id="registry-share-url" class="registry-account__share-input" readonly
                 value="<?php echo esc_url($shareUrl); ?>"
                 onfocus="this.select()" />
             <a class="button" href="<?php echo esc_url($shareUrl); ?>" target="_blank" rel="noopener">
-                <?php esc_html_e('Open', 'registry'); ?>
+                <?php esc_html_e('Open', 'plogins-registry'); ?>
             </a>
         </p>
 
-        <h4><?php esc_html_e('Event details', 'registry'); ?></h4>
+        <h4><?php esc_html_e('Event details', 'plogins-registry'); ?></h4>
         <?php $this->renderDetailsForm('update', $registryId, $title, $eventType, $eventDate); ?>
 
-        <h4><?php esc_html_e('Items', 'registry'); ?></h4>
+        <h4><?php esc_html_e('Items', 'plogins-registry'); ?></h4>
         <?php if ([] === $items) : ?>
-            <p><?php esc_html_e('No items yet. Browse the shop and use "Add to registry" on a product.', 'registry'); ?></p>
+            <p><?php esc_html_e('No items yet. Browse the shop and use "Add to registry" on a product.', 'plogins-registry'); ?></p>
         <?php else : ?>
             <form method="post" class="registry-account__items-form">
                 <?php wp_nonce_field(self::NONCE, 'registry_nonce'); ?>
@@ -406,10 +406,10 @@ final class MyRegistries implements HasHooks
                 <table class="registry-account__table shop_table">
                     <thead>
                         <tr>
-                            <th><?php esc_html_e('Product', 'registry'); ?></th>
-                            <th><?php esc_html_e('Wanted', 'registry'); ?></th>
-                            <th><?php esc_html_e('Purchased', 'registry'); ?></th>
-                            <th><span class="screen-reader-text"><?php esc_html_e('Remove', 'registry'); ?></span></th>
+                            <th><?php esc_html_e('Product', 'plogins-registry'); ?></th>
+                            <th><?php esc_html_e('Wanted', 'plogins-registry'); ?></th>
+                            <th><?php esc_html_e('Purchased', 'plogins-registry'); ?></th>
+                            <th><span class="screen-reader-text"><?php esc_html_e('Remove', 'plogins-registry'); ?></span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -422,12 +422,12 @@ final class MyRegistries implements HasHooks
                             $bought = $purchased[$productId] ?? 0;
                             ?>
                             <tr>
-                                <td data-label="<?php esc_attr_e('Product', 'registry'); ?>">
+                                <td data-label="<?php esc_attr_e('Product', 'plogins-registry'); ?>">
                                     <?php echo esc_html($product->get_name()); ?>
                                 </td>
-                                <td data-label="<?php esc_attr_e('Wanted', 'registry'); ?>">
+                                <td data-label="<?php esc_attr_e('Wanted', 'plogins-registry'); ?>">
                                     <label class="screen-reader-text" for="registry-qty-<?php echo esc_attr((string) $productId); ?>">
-                                        <?php esc_html_e('Desired quantity', 'registry'); ?>
+                                        <?php esc_html_e('Desired quantity', 'plogins-registry'); ?>
                                     </label>
                                     <input type="number" min="1" step="1"
                                         id="registry-qty-<?php echo esc_attr((string) $productId); ?>"
@@ -435,31 +435,31 @@ final class MyRegistries implements HasHooks
                                         value="<?php echo esc_attr((string) $desired); ?>"
                                         class="registry-account__qty" />
                                 </td>
-                                <td data-label="<?php esc_attr_e('Purchased', 'registry'); ?>"><?php echo esc_html((string) $bought); ?></td>
+                                <td data-label="<?php esc_attr_e('Purchased', 'plogins-registry'); ?>"><?php echo esc_html((string) $bought); ?></td>
                                 <td>
                                     <button type="submit" name="registry_remove" value="<?php echo esc_attr((string) $productId); ?>"
                                         class="registry-account__remove" formnovalidate
                                         aria-label="<?php
                                         /* translators: %s: product name */
-                                        echo esc_attr(sprintf(__('Remove %s', 'registry'), $product->get_name()));
+                                        echo esc_attr(sprintf(__('Remove %s', 'plogins-registry'), $product->get_name()));
                                         ?>"><span aria-hidden="true">&times;</span></button>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                <p><button type="submit" class="button"><?php esc_html_e('Update quantities', 'registry'); ?></button></p>
+                <p><button type="submit" class="button"><?php esc_html_e('Update quantities', 'plogins-registry'); ?></button></p>
             </form>
         <?php endif; ?>
 
         <?php if ($this->cpt->canDelete($registryId, get_current_user_id())) : ?>
-            <h4><?php esc_html_e('Delete registry', 'registry'); ?></h4>
+            <h4><?php esc_html_e('Delete registry', 'plogins-registry'); ?></h4>
             <form method="post" class="registry-account__delete-form"
-                onsubmit="return confirm('<?php echo esc_js(__('Delete this registry? This cannot be undone.', 'registry')); ?>');">
+                onsubmit="return confirm('<?php echo esc_js(__('Delete this registry? This cannot be undone.', 'plogins-registry')); ?>');">
                 <?php wp_nonce_field(self::NONCE, 'registry_nonce'); ?>
                 <input type="hidden" name="registry_action" value="delete" />
                 <input type="hidden" name="registry_id" value="<?php echo esc_attr((string) $registryId); ?>" />
-                <button type="submit" class="button registry-account__delete"><?php esc_html_e('Delete registry', 'registry'); ?></button>
+                <button type="submit" class="button registry-account__delete"><?php esc_html_e('Delete registry', 'plogins-registry'); ?></button>
             </form>
         <?php endif; ?>
 
@@ -489,14 +489,14 @@ final class MyRegistries implements HasHooks
             <?php endif; ?>
 
             <p class="registry-account__field">
-                <label for="registry-title-<?php echo esc_attr($mode); ?>"><?php esc_html_e('Registry name', 'registry'); ?></label>
+                <label for="registry-title-<?php echo esc_attr($mode); ?>"><?php esc_html_e('Registry name', 'plogins-registry'); ?></label>
                 <input type="text" id="registry-title-<?php echo esc_attr($mode); ?>" name="registry_title"
                     value="<?php echo esc_attr($title); ?>" required
-                    placeholder="<?php esc_attr_e('e.g. Anna & Tom’s Wedding', 'registry'); ?>" />
+                    placeholder="<?php esc_attr_e('e.g. Anna & Tom’s Wedding', 'plogins-registry'); ?>" />
             </p>
 
             <p class="registry-account__field">
-                <label for="registry-type-<?php echo esc_attr($mode); ?>"><?php esc_html_e('Event type', 'registry'); ?></label>
+                <label for="registry-type-<?php echo esc_attr($mode); ?>"><?php esc_html_e('Event type', 'plogins-registry'); ?></label>
                 <select id="registry-type-<?php echo esc_attr($mode); ?>" name="registry_event_type">
                     <?php foreach (GiftRegistry::eventTypes() as $slug => $label) : ?>
                         <option value="<?php echo esc_attr($slug); ?>" <?php selected($eventType, $slug); ?>>
@@ -507,14 +507,14 @@ final class MyRegistries implements HasHooks
             </p>
 
             <p class="registry-account__field">
-                <label for="registry-date-<?php echo esc_attr($mode); ?>"><?php esc_html_e('Event date', 'registry'); ?></label>
+                <label for="registry-date-<?php echo esc_attr($mode); ?>"><?php esc_html_e('Event date', 'plogins-registry'); ?></label>
                 <input type="date" id="registry-date-<?php echo esc_attr($mode); ?>" name="registry_event_date"
                     value="<?php echo esc_attr($eventDate); ?>" />
             </p>
 
             <p>
                 <button type="submit" class="button">
-                    <?php echo 'create' === $mode ? esc_html__('Create registry', 'registry') : esc_html__('Save details', 'registry'); ?>
+                    <?php echo 'create' === $mode ? esc_html__('Create registry', 'plogins-registry') : esc_html__('Save details', 'plogins-registry'); ?>
                 </button>
             </p>
         </form>
