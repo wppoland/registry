@@ -352,14 +352,17 @@ final class MyRegistries implements HasHooks
         <?php else : ?>
             <div class="woocommerce-info">
                 <?php
-                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML from filter is safe.
-                echo apply_filters(
-                    'registry/limit_notice_html',
-                    sprintf(
-                        /* translators: %d: registries limit */
-                        /* translators: %d: the registry limit a site owner set with the registry/max_registries_limit filter. */
-                        __('You have reached the limit of %d gift registry set by this store.', 'plogins-registry'),
-                        $limit
+                // The old note claimed the filter's HTML was safe, which nothing
+                // enforced. wp_kses_post keeps the markup a notice needs and drops
+                // scripts, so a third party filtering this cannot inject.
+                echo wp_kses_post(
+                    apply_filters(
+                        'registry/limit_notice_html',
+                        sprintf(
+                            /* translators: %d: the registry limit a site owner set with the registry/max_registries_limit filter. */
+                            esc_html__('You have reached the limit of %d gift registry set by this store.', 'plogins-registry'),
+                            (int) $limit
+                        )
                     )
                 );
                 ?>
