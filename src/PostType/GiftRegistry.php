@@ -63,14 +63,14 @@ final class GiftRegistry implements HasHooks
             self::POST_TYPE,
             [
                 'labels'              => [
-                    'name'          => __('Gift Registries', 'registry'),
-                    'singular_name' => __('Gift Registry', 'registry'),
-                    'menu_name'     => __('Gift Registries', 'registry'),
-                    'all_items'     => __('Gift Registries', 'registry'),
-                    'edit_item'     => __('View Gift Registry', 'registry'),
-                    'view_item'     => __('View Gift Registry', 'registry'),
-                    'search_items'  => __('Search gift registries', 'registry'),
-                    'not_found'     => __('No gift registries found.', 'registry'),
+                    'name'          => __('Gift Registries', 'plogins-registry'),
+                    'singular_name' => __('Gift Registry', 'plogins-registry'),
+                    'menu_name'     => __('Gift Registries', 'plogins-registry'),
+                    'all_items'     => __('Gift Registries', 'plogins-registry'),
+                    'edit_item'     => __('View Gift Registry', 'plogins-registry'),
+                    'view_item'     => __('View Gift Registry', 'plogins-registry'),
+                    'search_items'  => __('Search gift registries', 'plogins-registry'),
+                    'not_found'     => __('No gift registries found.', 'plogins-registry'),
                 ],
                 // Publicly readable (shareable link) but not listed/searchable.
                 'public'              => true,
@@ -250,11 +250,11 @@ final class GiftRegistry implements HasHooks
     public static function eventTypes(): array
     {
         return [
-            'wedding'   => __('Wedding', 'registry'),
-            'baby'      => __('Baby shower', 'registry'),
-            'birthday'  => __('Birthday', 'registry'),
-            'housewarming' => __('Housewarming', 'registry'),
-            'other'     => __('Other', 'registry'),
+            'wedding'   => __('Wedding', 'plogins-registry'),
+            'baby'      => __('Baby shower', 'plogins-registry'),
+            'birthday'  => __('Birthday', 'plogins-registry'),
+            'housewarming' => __('Housewarming', 'plogins-registry'),
+            'other'     => __('Other', 'plogins-registry'),
         ];
     }
 }

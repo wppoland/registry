@@ -76,15 +76,15 @@ final class AddToRegistry implements HasHooks
         <div class="registry-add">
             <?php if ([] === $registries) : ?>
                 <p class="registry-add__empty">
-                    <a href="<?php echo esc_url($myAccount); ?>"><?php esc_html_e('Create a gift registry', 'registry'); ?></a>
-                    <?php esc_html_e('to add this product.', 'registry'); ?>
+                    <a href="<?php echo esc_url($myAccount); ?>"><?php esc_html_e('Create a gift registry', 'plogins-registry'); ?></a>
+                    <?php esc_html_e('to add this product.', 'plogins-registry'); ?>
                 </p>
             <?php else : ?>
                 <form method="post" class="registry-add__form">
                     <?php wp_nonce_field(self::NONCE, 'registry_add_nonce'); ?>
                     <input type="hidden" name="registry_add_product" value="<?php echo esc_attr((string) $product->get_id()); ?>" />
                     <label class="registry-add__label" for="registry-add-select">
-                        <?php esc_html_e('Add to gift registry', 'registry'); ?>
+                        <?php esc_html_e('Add to gift registry', 'plogins-registry'); ?>
                     </label>
                     <span class="registry-add__row">
                         <select id="registry-add-select" name="registry_add_id" class="registry-add__select">
@@ -95,7 +95,7 @@ final class AddToRegistry implements HasHooks
                             <?php endforeach; ?>
                         </select>
                         <button type="submit" class="button registry-add__button">
-                            <?php esc_html_e('Add to registry', 'registry'); ?>
+                            <?php esc_html_e('Add to registry', 'plogins-registry'); ?>
                         </button>
                     </span>
                 </form>

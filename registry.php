@@ -11,7 +11,7 @@
  * Author URI:        https://wppoland.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       registry
+ * Text Domain:       plogins-registry
  * Domain Path:       /languages
  * WC requires at least: 8.0
  * WC tested up to: 10.9
@@ -66,7 +66,7 @@ add_action('plugins_loaded', static function (): void {
     if (! class_exists('WooCommerce')) {
         add_action('admin_notices', static function (): void {
             echo '<div class="notice notice-error"><p>';
-            echo esc_html__('Registry - Gift Registry for WooCommerce requires WooCommerce to be active.', 'registry');
+            echo esc_html__('Registry - Gift Registry for WooCommerce requires WooCommerce to be active.', 'plogins-registry');
             echo '</p></div>';
         });
         return;
