@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,7 +60,7 @@ When a gift is bought through a registry, the registry it belongs to is stored o
 
 = Can guests buy directly from the shared page? =
 
-Yes, if "Allow direct purchase" is enabled in the settings. Otherwise the buy button sends guests to the product page.
+Yes, if "Allow direct purchase" is enabled in the settings. Otherwise the buy button sends guests to the product page. Gifts that need options picked first, such as a variable product with a size or colour, always open the product page so the guest can choose; the registry is remembered while they do, so the gift still counts.
 
 = Do guests need an account to view a shared registry? =
 
@@ -82,9 +82,13 @@ Registry does not connect to any external service. It makes no outbound network 
 
 == Translations ==
 
-Registry includes Polish, German and Spanish translations for the plugin interface. The text domain is `registry`, so WordPress.org language packs can also override or extend these bundled translations.
+Registry includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-registry`, so WordPress.org language packs can also override or extend these bundled translations.
 
 == Changelog ==
+
+= 1.0.5 =
+* Gifts with options, such as a variable product with a size or colour, now show "Choose options" and open the product page, instead of a "Buy this gift" button that added nothing to the cart.
+* The registry is remembered while the guest picks those options, so the gift is counted as bought once the order is paid.
 
 = 1.0.3 =
 * Fixed low-contrast admin headings under an OS dark-mode preference.

@@ -218,9 +218,30 @@ final class PublicView implements HasHooks
                 esc_html__('Fully purchased', 'plogins-registry') . '</span>';
         }
 
+        // The product page link carries the registry id so a gift bought after a detour
+        // through the product page is still credited to the right list.
+        $productUrl = add_query_arg(
+            PurchaseTracker::ITEM_KEY,
+            $registryId,
+            (string) get_permalink($product->get_id()),
+        );
+
         if (! $this->settings->allowsPurchase() || ! $product->is_purchasable() || ! $product->is_in_stock()) {
-            return '<a class="button" href="' . esc_url((string) get_permalink($product->get_id())) . '">' .
+            return '<a class="button" href="' . esc_url($productUrl) . '">' .
                 esc_html__('View product', 'plogins-registry') . '</a>';
+        }
+
+        // "Allow direct purchase" is one global switch, but a variable product cannot be
+        // added from a bare ?add-to-cart=<parent id>: WooCommerce has no variation to
+        // resolve, so it aborts and the guest lands on the product page with an empty cart.
+        // The merchant saw a ticked box promising one step buying, the guest got a button
+        // that did nothing. Items with options to pick go to the product page instead.
+        if ($product->has_options()) {
+            return sprintf(
+                '<a class="button registry-public__buy" href="%1$s">%2$s</a>',
+                esc_url($productUrl),
+                esc_html__('Choose options', 'plogins-registry'),
+            );
         }
 
         $url = add_query_arg(
