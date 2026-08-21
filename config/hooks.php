@@ -17,6 +17,7 @@ declare(strict_types=1);
 use Registry\Account\MyRegistries;
 use Registry\Admin\Settings as AdminSettings;
 use Registry\PostType\GiftRegistry;
+use Registry\Service\AbilitiesService;
 use Registry\Service\AddToRegistry;
 use Registry\Service\PublicView;
 use Registry\Service\PurchaseTracker;
@@ -29,6 +30,7 @@ $registry_hooks = [
     PublicView::class,
     AddToRegistry::class,
     MyRegistries::class,
+    AbilitiesService::class,
 ];
 
 if (is_admin()) {
