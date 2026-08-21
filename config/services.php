@@ -14,6 +14,7 @@ use Registry\Admin\Settings as AdminSettings;
 use Registry\Container;
 use Registry\Migrator;
 use Registry\PostType\GiftRegistry;
+use Registry\Service\AbilitiesService;
 use Registry\Service\AddToRegistry;
 use Registry\Service\PublicView;
 use Registry\Service\PurchaseTracker;
@@ -47,6 +48,13 @@ return static function (Container $c): void {
     ));
 
     $c->singleton(MyRegistries::class, static fn (Container $c): MyRegistries => new MyRegistries(
+        $c->get(RegistryManager::class),
+        $c->get(GiftRegistry::class),
+        $c->get(PurchaseTracker::class),
+        $c->get(Settings::class),
+    ));
+
+    $c->singleton(AbilitiesService::class, static fn (Container $c): AbilitiesService => new AbilitiesService(
         $c->get(RegistryManager::class),
         $c->get(GiftRegistry::class),
         $c->get(PurchaseTracker::class),
