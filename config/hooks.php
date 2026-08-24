@@ -31,6 +31,7 @@ $registry_hooks = [
     AddToRegistry::class,
     MyRegistries::class,
     AbilitiesService::class,
+    \Registry\Service\RegistryPrivacyService::class,
 ];
 
 if (is_admin()) {
