@@ -19,6 +19,7 @@ use Registry\Service\AddToRegistry;
 use Registry\Service\PublicView;
 use Registry\Service\PurchaseTracker;
 use Registry\Service\RegistryManager;
+use Registry\Service\RegistryPrivacyService;
 use Registry\Support\Settings;
 
 defined('ABSPATH') || exit;
@@ -60,6 +61,8 @@ return static function (Container $c): void {
         $c->get(PurchaseTracker::class),
         $c->get(Settings::class),
     ));
+
+    $c->singleton(RegistryPrivacyService::class, static fn (): RegistryPrivacyService => new RegistryPrivacyService());
 
     if (is_admin()) {
         $c->singleton(AdminSettings::class, static fn (Container $c): AdminSettings => new AdminSettings(
