@@ -83,7 +83,7 @@ Registry does not connect to any external service. It makes no outbound network 
 
 == Translations ==
 
-Registry includes Polish, German and Spanish translations for the plugin interface. The text domain is `plogins-registry`, so WordPress.org language packs can also override or extend these bundled translations.
+Registry is fully translatable and ships the `plogins-registry.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
 
