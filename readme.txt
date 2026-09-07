@@ -1,11 +1,11 @@
-=== Registry - Gift Registry for WooCommerce ===
+=== Plogins Registry - Gift Registry for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, gift registry, wishlist, wedding, baby shower
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,9 @@ Registry does not connect to any external service. It makes no outbound network 
 Registry is fully translatable and ships the `plogins-registry.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.1 =
+* Renamed to Plogins Registry - Gift Registry for WooCommerce so the name leads with the brand rather than a generic word, which is what the WordPress.org plugin review team asks for. The plugin slug is unchanged.
 
 = 1.1.0 =
 * An AI assistant working in your wp-admin can now read gift registries for you, through the WordPress Abilities API (WordPress 6.9 and later). Ask what is still unbought on a registry and the answer comes from the real list: what was wanted, how many guests have already bought, and how many are still needed.

@@ -1,4 +1,4 @@
-=== Registry - Gift Registry for WooCommerce ===
+=== Plogins Registry - Gift Registry for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, gift registry, wishlist, wedding, baby shower
 Requires at least: 6.5
