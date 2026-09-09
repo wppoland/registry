@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,10 @@ Registry does not connect to any external service. It makes no outbound network 
 Registry is fully translatable and ships the `plogins-registry.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.2 =
+* Registry Pro could never start. Registry finished loading without announcing it, so the paid add-on sat waiting for a signal that was never sent and none of its features (owner notifications, multiple registries per customer, group gifting) ever appeared. Registry now announces the end of its own boot, which is what Registry Pro listens for.
+* The translation template was regenerated. It still named an older version of the plugin and pointed at source lines that had since moved, which is what translation tools read to show a string in context.
 
 = 1.1.1 =
 * Renamed to Plogins Registry - Gift Registry for WooCommerce so the name leads with the brand rather than a generic word, which is what the WordPress.org plugin review team asks for. The plugin slug is unchanged.

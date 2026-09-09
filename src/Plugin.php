@@ -49,5 +49,12 @@ final class Plugin
                 $service->registerHooks();
             }
         }
+
+        /**
+         * Fires after Registry has booted. The PRO plugin extends Registry here.
+         *
+         * @param Plugin $plugin The booted plugin instance.
+         */
+        do_action('registry/booted', $this);
     }
 }
