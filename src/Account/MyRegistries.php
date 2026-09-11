@@ -13,7 +13,7 @@ use Registry\Support\Settings;
 defined('ABSPATH') || exit;
 
 /**
- * The "My Registries" area in WooCommerce → My Account.
+ * The "My Registries" area in WooCommerce > My Account.
  *
  * Registers a `registries` account endpoint that lets a logged-in customer list
  * their registries, create a new one, edit event details, manage desired

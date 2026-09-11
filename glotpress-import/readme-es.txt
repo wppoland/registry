@@ -30,7 +30,7 @@ Código fuente y seguimiento de incidencias en GitHub: https://github.com/wppola
 
 = Features =
 
-* Los clientes crean y gestionan sus listas en Mi cuenta → Listas de regalos.
+* Los clientes crean y gestionan sus listas en Mi cuenta > Listas de regalos.
 * Cada lista tiene un tipo de evento (boda, baby shower, cumpleaños, estreno de casa, otro) y una fecha del evento.
 * Control «Añadir a la lista de regalos» en páginas de producto individual, con cantidad deseada por artículo.
 * Página pública de solo lectura con su propio enlace permanente, pensada para compartir.
@@ -40,9 +40,9 @@ Código fuente y seguimiento de incidencias en GitHub: https://github.com/wppola
 
 == Installation ==
 
-1. Sube el plugin a `/wp-content/plugins/registry` o instálalo desde Plugins → Añadir nuevo.
+1. Sube el plugin a `/wp-content/plugins/registry` o instálalo desde Plugins > Añadir nuevo.
 2. Actívalo. WooCommerce debe estar instalado y activo.
-3. Las listas están activadas por defecto. Entra en WooCommerce → Listas de regalos para desactivarlas o elegir si los invitados pueden comprar directamente desde la página compartida.
+3. Las listas están activadas por defecto. Entra en WooCommerce > Listas de regalos para desactivarlas o elegir si los invitados pueden comprar directamente desde la página compartida.
 
 == Frequently Asked Questions ==
 
@@ -52,7 +52,7 @@ Sí. WooCommerce debe estar instalado y activo.
 
 = Who can create a registry? =
 
-Cualquier cliente con sesión iniciada, desde Mi cuenta → Listas de regalos.
+Cualquier cliente con sesión iniciada, desde Mi cuenta > Listas de regalos.
 
 = How does purchase tracking work? =
 

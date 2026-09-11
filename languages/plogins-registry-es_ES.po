@@ -213,9 +213,9 @@ msgstr ""
 "pedidos para que nadie realice compras dobles."
 
 #: src/Admin/Settings.php:90
-msgid "Customers manage their registries under My Account → Gift Registries."
+msgid "Customers manage their registries under My Account > Gift Registries."
 msgstr ""
-"Los clientes administran sus registros en Mi cuenta → Registros de regalo."
+"Los clientes administran sus registros en Mi cuenta > Registros de regalo."
 
 #: src/Admin/Settings.php:97
 msgid "Storefront visibility"
@@ -243,12 +243,12 @@ msgstr "Muestre listas de regalos en el escaparate."
 #: src/Admin/Settings.php:110
 msgid ""
 "Master switch. Turn off to hide everything at once, the \"Add to registry\" "
-"button on products, the My Account → Gift Registries area, and every shared "
+"button on products, the My Account > Gift Registries area, and every shared "
 "public registry page stop rendering. Existing registries are kept and "
 "reappear when you switch this back on. On by default."
 msgstr ""
 "Interruptor maestro. Desactívelo para ocultar todo a la vez, el botón "
-"\"Añadir al registro\" en los productos, el área Mi cuenta → Registros de "
+"\"Añadir al registro\" en los productos, el área Mi cuenta > Registros de "
 "regalo y todas las páginas de registro público compartidas dejan de "
 "mostrarse. Los registros existentes se conservan y reaparecen cuando vuelve "
 "a activarlo. Activado de forma predeterminada."
