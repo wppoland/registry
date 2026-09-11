@@ -210,7 +210,7 @@ msgid "Let logged-in customers build shareable gift registries for weddings, bab
 msgstr ""
 
 #: src/Admin/Settings.php:90
-msgid "Customers manage their registries under My Account → Gift Registries."
+msgid "Customers manage their registries under My Account > Gift Registries."
 msgstr ""
 
 #: src/Admin/Settings.php:97
@@ -230,7 +230,7 @@ msgid "Show gift registries on the storefront."
 msgstr ""
 
 #: src/Admin/Settings.php:110
-msgid "Master switch. Turn off to hide everything at once, the \"Add to registry\" button on products, the My Account → Gift Registries area, and every shared public registry page stop rendering. Existing registries are kept and reappear when you switch this back on. On by default."
+msgid "Master switch. Turn off to hide everything at once, the \"Add to registry\" button on products, the My Account > Gift Registries area, and every shared public registry page stop rendering. Existing registries are kept and reappear when you switch this back on. On by default."
 msgstr ""
 
 #: src/Admin/Settings.php:114

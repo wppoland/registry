@@ -30,7 +30,7 @@ Kod źródłowy i zgłaszanie problemów na GitHubie: https://github.com/wppolan
 
 = Features =
 
-* Klienci tworzą listy i zarządzają nimi w Moje konto → Listy prezentów.
+* Klienci tworzą listy i zarządzają nimi w Moje konto > Listy prezentów.
 * Każda lista ma typ wydarzenia (ślub, baby shower, urodziny, parapetówka, inne) i datę wydarzenia.
 * Kontrolka «Dodaj do listy prezentów» na stronach pojedynczych produktów z żądaną ilością na pozycję.
 * Publiczna strona listy tylko do odczytu z własnym permalinkiem, przeznaczona do udostępniania.
@@ -40,9 +40,9 @@ Kod źródłowy i zgłaszanie problemów na GitHubie: https://github.com/wppolan
 
 == Installation ==
 
-1. Prześlij wtyczkę do `/wp-content/plugins/registry` lub zainstaluj przez Wtyczki → Dodaj nową.
+1. Prześlij wtyczkę do `/wp-content/plugins/registry` lub zainstaluj przez Wtyczki > Dodaj nową.
 2. Włącz ją. WooCommerce musi być zainstalowane i aktywne.
-3. Listy są domyślnie włączone. Wejdź w WooCommerce → Listy prezentów, aby je wyłączyć lub wybrać, czy goście mogą kupować bezpośrednio ze współdzielonej strony.
+3. Listy są domyślnie włączone. Wejdź w WooCommerce > Listy prezentów, aby je wyłączyć lub wybrać, czy goście mogą kupować bezpośrednio ze współdzielonej strony.
 
 == Frequently Asked Questions ==
 
@@ -52,7 +52,7 @@ Tak. WooCommerce musi być zainstalowane i aktywne.
 
 = Who can create a registry? =
 
-Każdy zalogowany klient, w obszarze Moje konto → Listy prezentów.
+Każdy zalogowany klient, w obszarze Moje konto > Listy prezentów.
 
 = How does purchase tracking work? =
 

@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,7 +30,7 @@ Source and issue tracker live on GitHub: [github.com/wppoland/registry](https://
 
 = Features =
 
-* Customers create and manage their registries under My Account → Gift Registries.
+* Customers create and manage their registries under My Account > Gift Registries.
 * Each registry has an event type (wedding, baby shower, birthday, housewarming, other) and an event date.
 * An "Add to gift registry" control on single product pages, with a per-item desired quantity.
 * A public, read-only registry page on its own permalink, made for sharing.
@@ -41,9 +41,9 @@ Source and issue tracker live on GitHub: [github.com/wppoland/registry](https://
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/registry`, or install via Plugins → Add New.
+1. Upload the plugin to `/wp-content/plugins/registry`, or install via Plugins > Add New.
 2. Activate it. WooCommerce must be installed and active.
-3. Registries are on by default. Visit WooCommerce → Gift Registries to turn them off or to choose whether guests can buy directly from the shared page.
+3. Registries are on by default. Visit WooCommerce > Gift Registries to turn them off or to choose whether guests can buy directly from the shared page.
 
 == Frequently Asked Questions ==
 
@@ -53,7 +53,7 @@ Yes. WooCommerce must be installed and active.
 
 = Who can create a registry? =
 
-Any logged-in customer, from the My Account → Gift Registries area.
+Any logged-in customer, from the My Account > Gift Registries area.
 
 = How does purchase tracking work? =
 
@@ -86,6 +86,9 @@ Registry does not connect to any external service. It makes no outbound network 
 Registry is fully translatable and ships the `plogins-registry.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.4 =
+* Fixed: arrow glyphs in the admin menu paths, and in the strings handed to translators. An arrow inside a translatable string makes the glyph every translator's problem and changes the layout in any locale that drops it.
 
 = 1.1.3 =
 * The readme still said the plugin was tested up to WordPress 7.0. WordPress 7.1 is current, and a plugin whose readme names an older version is hidden from the plugin directory's search results.

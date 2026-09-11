@@ -30,7 +30,7 @@ Quellcode und Issue-Tracker auf GitHub: https://github.com/wppoland/registry
 
 = Features =
 
-* Kunden erstellen und verwalten ihre Listen unter Mein Konto → Geschenklisten.
+* Kunden erstellen und verwalten ihre Listen unter Mein Konto > Geschenklisten.
 * Jede Liste hat einen Event-Typ (Hochzeit, Babyparty, Geburtstag, Einweihungsfeier, Sonstiges) und ein Event-Datum.
 * Steuerelement «Zur Geschenkliste hinzufügen» auf Einzelproduktseiten mit gewünschter Menge pro Artikel.
 * Öffentliche, schreibgeschützte Listenseite mit eigenem Permalink, zum Teilen gedacht.
@@ -40,9 +40,9 @@ Quellcode und Issue-Tracker auf GitHub: https://github.com/wppoland/registry
 
 == Installation ==
 
-1. Lade das Plugin nach `/wp-content/plugins/registry` hoch oder installiere es über Plugins → Neu hinzufügen.
+1. Lade das Plugin nach `/wp-content/plugins/registry` hoch oder installiere es über Plugins > Neu hinzufügen.
 2. Aktiviere es. WooCommerce muss installiert und aktiv sein.
-3. Listen sind standardmäßig aktiv. Öffne WooCommerce → Geschenklisten, um sie abzuschalten oder zu wählen, ob Gäste direkt von der geteilten Seite kaufen können.
+3. Listen sind standardmäßig aktiv. Öffne WooCommerce > Geschenklisten, um sie abzuschalten oder zu wählen, ob Gäste direkt von der geteilten Seite kaufen können.
 
 == Frequently Asked Questions ==
 
@@ -52,7 +52,7 @@ Ja. WooCommerce muss installiert und aktiv sein.
 
 = Who can create a registry? =
 
-Jeder eingeloggte Kunde, im Bereich Mein Konto → Geschenklisten.
+Jeder eingeloggte Kunde, im Bereich Mein Konto > Geschenklisten.
 
 = How does purchase tracking work? =
 

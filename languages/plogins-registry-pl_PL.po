@@ -212,9 +212,9 @@ msgstr ""
 "podstawie zamówień, aby nikt nie kupił tego samego dwa razy."
 
 #: src/Admin/Settings.php:90
-msgid "Customers manage their registries under My Account → Gift Registries."
+msgid "Customers manage their registries under My Account > Gift Registries."
 msgstr ""
-"Klienci zarządzają swoimi listami prezentów w sekcji Moje konto → Listy "
+"Klienci zarządzają swoimi listami prezentów w sekcji Moje konto > Listy "
 "prezentów."
 
 #: src/Admin/Settings.php:97
@@ -242,12 +242,12 @@ msgstr "Wyświetlaj listy prezentów w sklepie."
 #: src/Admin/Settings.php:110
 msgid ""
 "Master switch. Turn off to hide everything at once, the \"Add to registry\" "
-"button on products, the My Account → Gift Registries area, and every shared "
+"button on products, the My Account > Gift Registries area, and every shared "
 "public registry page stop rendering. Existing registries are kept and "
 "reappear when you switch this back on. On by default."
 msgstr ""
 "Przełącznik główny. Wyłącz, aby ukryć wszystko na raz, przycisk „Dodaj do "
-"rejestru” w produktach, obszar Moje konto → Rejestry prezentów i każda "
+"rejestru” w produktach, obszar Moje konto > Rejestry prezentów i każda "
 "udostępniona strona rejestru publicznego przestają się renderować. "
 "Istniejące rejestry zostaną zachowane i pojawią się ponownie po ponownym "
 "włączeniu tej opcji. Domyślnie włączone."

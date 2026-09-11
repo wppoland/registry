@@ -87,7 +87,7 @@ final class Settings implements HasHooks
             <div class="registry-intro">
                 <h2><?php esc_html_e('Gift registries for your store', 'plogins-registry'); ?></h2>
                 <p><?php esc_html_e('Let logged-in customers build shareable gift registries for weddings, baby showers and other events. Guests open the shared link, see what is still needed, and buy directly, purchased quantities are tracked from orders so nobody double-buys.', 'plogins-registry'); ?></p>
-                <p><?php esc_html_e('Customers manage their registries under My Account → Gift Registries.', 'plogins-registry'); ?></p>
+                <p><?php esc_html_e('Customers manage their registries under My Account > Gift Registries.', 'plogins-registry'); ?></p>
             </div>
 
             <form method="post" action="options.php">
@@ -107,7 +107,7 @@ final class Settings implements HasHooks
                                             <?php checked($this->settings->isEnabled(), true); ?> />
                                         <?php esc_html_e('Show gift registries on the storefront.', 'plogins-registry'); ?>
                                     </label>
-                                    <p class="description"><?php esc_html_e('Master switch. Turn off to hide everything at once, the "Add to registry" button on products, the My Account → Gift Registries area, and every shared public registry page stop rendering. Existing registries are kept and reappear when you switch this back on. On by default.', 'plogins-registry'); ?></p>
+                                    <p class="description"><?php esc_html_e('Master switch. Turn off to hide everything at once, the "Add to registry" button on products, the My Account > Gift Registries area, and every shared public registry page stop rendering. Existing registries are kept and reappear when you switch this back on. On by default.', 'plogins-registry'); ?></p>
                                 </td>
                             </tr>
                             <tr>
