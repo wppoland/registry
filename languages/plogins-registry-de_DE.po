@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Registry - Gift Registry for WooCommerce 0.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/registry\n"
-"POT-Creation-Date: 2026-06-16T20:24:34+00:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/plogins-registry\n"
+"POT-Creation-Date: 2026-09-09T15:05:00+00:00\n"
 "PO-Revision-Date: 2026-06-16T20:24:34+00:00\n"
 "Last-Translator: motylanogha <szatkowski.mariusz@gmail.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -37,15 +37,15 @@ msgstr ""
 
 #. Author of the plugin
 #: registry.php
-msgid "WPPoland"
-msgstr "WPPoland"
+msgid "WPPoland.com"
+msgstr ""
 
 #. Author URI of the plugin
 #: registry.php
-msgid "https://plogins.com/"
-msgstr "https://plogins.com/"
+msgid "https://wppoland.com"
+msgstr ""
 
-#: registry.php:68
+#: registry.php:69
 msgid ""
 "Registry - Gift Registry for WooCommerce requires WooCommerce to be active."
 msgstr ""
@@ -54,28 +54,34 @@ msgstr ""
 
 #: src/Account/MyRegistries.php:73 src/Account/MyRegistries.php:79
 #: src/Admin/Settings.php:53 src/Admin/Settings.php:54
-#: src/PostType/GiftRegistry.php:57 src/PostType/GiftRegistry.php:59
-#: src/PostType/GiftRegistry.php:60
+#: src/PostType/GiftRegistry.php:66 src/PostType/GiftRegistry.php:68
+#: src/PostType/GiftRegistry.php:69 src/Service/RegistryPrivacyService.php:34
+#: src/Service/RegistryPrivacyService.php:48
+#: src/Service/RegistryPrivacyService.php:83
 msgid "Gift Registries"
 msgstr "Geschenklisten"
 
-#: src/Account/MyRegistries.php:271
+#: src/Account/MyRegistries.php:279
 msgid "Registry created."
 msgstr "Geschenkliste erstellt."
 
-#: src/Account/MyRegistries.php:272
+#: src/Account/MyRegistries.php:280
 msgid "Registry updated."
 msgstr "Geschenkliste aktualisiert."
 
-#: src/Account/MyRegistries.php:273
+#: src/Account/MyRegistries.php:281
 msgid "Registry deleted."
 msgstr "Geschenkliste gelöscht."
 
-#: src/Account/MyRegistries.php:274
+#: src/Account/MyRegistries.php:282
+msgid "You have reached the maximum number of gift registries allowed."
+msgstr ""
+
+#: src/Account/MyRegistries.php:283
 msgid "Sorry, that action could not be completed."
 msgstr "Leider konnte diese Aktion nicht abgeschlossen werden."
 
-#: src/Account/MyRegistries.php:299
+#: src/Account/MyRegistries.php:316
 msgid ""
 "Create a gift registry, add the products you would love to receive, and "
 "share the link with friends and family."
@@ -83,116 +89,122 @@ msgstr ""
 "Erstelle eine Geschenkliste, füge die Produkte hinzu, die du gerne erhalten "
 "würden, und teile den Link mit Freunden und Familie."
 
-#: src/Account/MyRegistries.php:303
+#: src/Account/MyRegistries.php:320
 msgid "You have not created any registries yet."
 msgstr "Du hast noch keine Geschenklisten erstellt."
 
-#: src/Account/MyRegistries.php:308
+#: src/Account/MyRegistries.php:325
 msgid "Registry"
 msgstr "Geschenkliste"
 
-#: src/Account/MyRegistries.php:309
+#: src/Account/MyRegistries.php:326
 msgid "Event"
 msgstr "Ereignis"
 
-#: src/Account/MyRegistries.php:310 src/Account/MyRegistries.php:364
+#: src/Account/MyRegistries.php:327 src/Account/MyRegistries.php:401
 msgid "Items"
 msgstr "Artikel"
 
-#: src/Account/MyRegistries.php:311
+#: src/Account/MyRegistries.php:328
 msgid "Actions"
 msgstr "Aktionen"
 
-#: src/Account/MyRegistries.php:325
+#: src/Account/MyRegistries.php:342
 msgid "Manage"
 msgstr "Verwalten"
 
-#: src/Account/MyRegistries.php:332
+#: src/Account/MyRegistries.php:350
 msgid "Create a new registry"
 msgstr "Erstelle eine neue Geschenkliste"
 
-#: src/Account/MyRegistries.php:347
+#. translators: %d: the registry limit a site owner set with the registry/max_registries_limit filter.
+#: src/Account/MyRegistries.php:363
+#, php-format
+msgid "You have reached the limit of %d gift registry set by this store."
+msgstr ""
+
+#: src/Account/MyRegistries.php:384
 msgid "Back to all registries"
 msgstr "Zurück zu allen Geschenklisten"
 
-#: src/Account/MyRegistries.php:352
+#: src/Account/MyRegistries.php:389
 msgid "Shareable link:"
 msgstr "Link zum Teilen:"
 
-#: src/Account/MyRegistries.php:357
+#: src/Account/MyRegistries.php:394
 msgid "Open"
 msgstr "Offen"
 
-#: src/Account/MyRegistries.php:361
+#: src/Account/MyRegistries.php:398
 msgid "Event details"
 msgstr "Veranstaltungsdetails"
 
-#: src/Account/MyRegistries.php:366
+#: src/Account/MyRegistries.php:403
 msgid "No items yet. Browse the shop and use \"Add to registry\" on a product."
 msgstr ""
 "Noch keine Artikel. Durchsuche den Shop und verwende „Zur Geschenkliste "
 "hinzufügen“ für ein Produkt."
 
-#: src/Account/MyRegistries.php:375 src/Account/MyRegistries.php:391
+#: src/Account/MyRegistries.php:412 src/Account/MyRegistries.php:428
 msgid "Product"
 msgstr "Produkt"
 
-#: src/Account/MyRegistries.php:376 src/Account/MyRegistries.php:394
+#: src/Account/MyRegistries.php:413 src/Account/MyRegistries.php:431
 msgid "Wanted"
 msgstr "Gesucht"
 
-#: src/Account/MyRegistries.php:377 src/Account/MyRegistries.php:404
+#: src/Account/MyRegistries.php:414 src/Account/MyRegistries.php:441
 msgid "Purchased"
 msgstr "Gekauft"
 
-#: src/Account/MyRegistries.php:378
+#: src/Account/MyRegistries.php:415
 msgid "Remove"
 msgstr "Entfernen"
 
-#: src/Account/MyRegistries.php:396
+#: src/Account/MyRegistries.php:433
 msgid "Desired quantity"
 msgstr "Gewünschte Menge"
 
 #. translators: %s: product name
-#: src/Account/MyRegistries.php:410
+#: src/Account/MyRegistries.php:447
 #, php-format
 msgid "Remove %s"
 msgstr "%s entfernen"
 
-#: src/Account/MyRegistries.php:417
+#: src/Account/MyRegistries.php:454
 msgid "Update quantities"
 msgstr "Mengen aktualisieren"
 
-#: src/Account/MyRegistries.php:421 src/Account/MyRegistries.php:427
+#: src/Account/MyRegistries.php:459 src/Account/MyRegistries.php:465
 msgid "Delete registry"
 msgstr "Geschenkliste löschen"
 
-#: src/Account/MyRegistries.php:423
+#: src/Account/MyRegistries.php:461
 msgid "Delete this registry? This cannot be undone."
 msgstr ""
 "Diese Geschenkliste löschen? Dies kann nicht rückgängig gemacht werden."
 
-#: src/Account/MyRegistries.php:446
+#: src/Account/MyRegistries.php:495
 msgid "Registry name"
 msgstr "Name der Geschenkliste"
 
-#: src/Account/MyRegistries.php:449
+#: src/Account/MyRegistries.php:498
 msgid "e.g. Anna & Tom’s Wedding"
 msgstr "z.B. Anna und Toms Hochzeit"
 
-#: src/Account/MyRegistries.php:453
+#: src/Account/MyRegistries.php:502
 msgid "Event type"
 msgstr "Ereignistyp"
 
-#: src/Account/MyRegistries.php:464
+#: src/Account/MyRegistries.php:513
 msgid "Event date"
 msgstr "Veranstaltungsdatum"
 
-#: src/Account/MyRegistries.php:471
+#: src/Account/MyRegistries.php:520
 msgid "Create registry"
 msgstr "Geschenkliste erstellen"
 
-#: src/Account/MyRegistries.php:471
+#: src/Account/MyRegistries.php:520
 msgid "Save details"
 msgstr "Details speichern"
 
@@ -208,8 +220,8 @@ msgid ""
 "nobody double-buys."
 msgstr ""
 "Ermögliche angemeldeten Kunden, gemeinsam nutzbare Geschenklisten für "
-"Hochzeiten, Babypartys und andere Veranstaltungen zu erstellen. Gäste öffnen"
-" den freigegebenen Link, sehen, was noch benötigt wird, und kaufen direkt "
+"Hochzeiten, Babypartys und andere Veranstaltungen zu erstellen. Gäste öffnen "
+"den freigegebenen Link, sehen, was noch benötigt wird, und kaufen direkt "
 "ein. Die gekauften Mengen werden anhand der Bestellungen verfolgt, sodass "
 "niemand doppelt kauft."
 
@@ -248,9 +260,9 @@ msgid ""
 "public registry page stop rendering. Existing registries are kept and "
 "reappear when you switch this back on. On by default."
 msgstr ""
-"Hauptschalter. Deaktiviere die Option, um alles auf einmal auszublenden. Die"
-" Schaltfläche „Zur Geschenkliste hinzufügen“ bei Produkten, im Bereich „Mein"
-" Konto“ > „Geschenklisten“ und auf jeder freigegebenen öffentlichen "
+"Hauptschalter. Deaktiviere die Option, um alles auf einmal auszublenden. Die "
+"Schaltfläche „Zur Geschenkliste hinzufügen“ bei Produkten, im Bereich „Mein "
+"Konto“ > „Geschenklisten“ und auf jeder freigegebenen öffentlichen "
 "Geschenklisten-Seite wird nicht mehr angezeigt. Vorhandene Geschenklisten "
 "bleiben erhalten und erscheinen wieder, wenn du dies wieder einschaltest. "
 "Standardmäßig aktiviert."
@@ -262,24 +274,18 @@ msgstr "Direktkauf zulassen"
 #: src/Admin/Settings.php:120
 msgid "Let guests buy registry items straight from the shared page."
 msgstr ""
-"Ermögliche deinen Gästen, Geschenklistenartikel direkt auf der freigegebenen"
-" Seite zu kaufen."
+"Ermögliche deinen Gästen, Geschenklistenartikel direkt auf der freigegebenen "
+"Seite zu kaufen."
 
 #: src/Admin/Settings.php:122
 msgid ""
 "On (recommended): a guest clicks \"Buy this gift\" on the registry and the "
-"item drops into their cart in one step. Off: the button instead sends them "
-"to the product page, where they choose options before adding to cart, useful"
-" for variable products that need a size or colour picked first. Has no "
-"effect unless gift registries are enabled above."
+"item drops into their cart in one step. Gifts that need options picked "
+"first, such as a variable product with a size or colour, always show "
+"\"Choose options\" and open the product page instead, the registry is "
+"remembered so the gift still counts. Off: every item sends guests to the "
+"product page. Has no effect unless gift registries are enabled above."
 msgstr ""
-"Ein (empfohlen): Ein Gast klickt in der Geschenkliste auf „Dieses Geschenk "
-"kaufen“ und der Artikel wird in einem Schritt in seinen Warenkorb gelegt. "
-"Aus: Die Schaltfläche leitet sie stattdessen zur Produktseite weiter, wo sie"
-" Optionen auswählen, bevor sie sie in den Warenkorb legen. Dies ist nützlich"
-" für variable Produkte, bei denen zuerst eine Größe oder Farbe ausgewählt "
-"werden muss. Hat keine Auswirkung, es sei denn, Geschenklisten sind oben "
-"aktiviert."
 
 #: src/Admin/Settings.php:124
 msgid "Guests reach a registry at a link like:"
@@ -290,41 +296,85 @@ msgctxt "example registry share URL slug"
 msgid "registry/emma-and-sam-wedding/"
 msgstr "Registry/Emma-und-Sam-Hochzeit/"
 
-#: src/PostType/GiftRegistry.php:58
+#: src/PostType/GiftRegistry.php:67
 msgid "Gift Registry"
 msgstr "Geschenkliste"
 
-#: src/PostType/GiftRegistry.php:61 src/PostType/GiftRegistry.php:62
+#: src/PostType/GiftRegistry.php:70 src/PostType/GiftRegistry.php:71
 msgid "View Gift Registry"
 msgstr "Geschenkliste anzeigen"
 
-#: src/PostType/GiftRegistry.php:63
+#: src/PostType/GiftRegistry.php:72
 msgid "Search gift registries"
 msgstr "Durchsuche Geschenklisten"
 
-#: src/PostType/GiftRegistry.php:64
+#: src/PostType/GiftRegistry.php:73
 msgid "No gift registries found."
 msgstr "Keine Geschenklisten gefunden."
 
-#: src/PostType/GiftRegistry.php:171
+#: src/PostType/GiftRegistry.php:253
 msgid "Wedding"
 msgstr "Hochzeit"
 
-#: src/PostType/GiftRegistry.php:172
+#: src/PostType/GiftRegistry.php:254
 msgid "Baby shower"
 msgstr "Babyparty"
 
-#: src/PostType/GiftRegistry.php:173
+#: src/PostType/GiftRegistry.php:255
 msgid "Birthday"
 msgstr "Geburtstag"
 
-#: src/PostType/GiftRegistry.php:174
+#: src/PostType/GiftRegistry.php:256
 msgid "Housewarming"
 msgstr "Einweihungsparty"
 
-#: src/PostType/GiftRegistry.php:175
+#: src/PostType/GiftRegistry.php:257
 msgid "Other"
 msgstr "Andere"
+
+#: src/Service/AbilitiesService.php:64
+msgid "Registry, gift registries"
+msgstr ""
+
+#: src/Service/AbilitiesService.php:65
+msgid ""
+"Gift registries a customer owns, with their event details and shareable link."
+msgstr ""
+
+#: src/Service/AbilitiesService.php:69
+msgid "Registry, registry items"
+msgstr ""
+
+#: src/Service/AbilitiesService.php:70
+msgid ""
+"The products wanted on a registry, their desired quantities and what guests "
+"have already bought."
+msgstr ""
+
+#: src/Service/AbilitiesService.php:87
+msgid "List a customer's gift registries"
+msgstr ""
+
+#: src/Service/AbilitiesService.php:88
+msgid ""
+"Returns the gift registries owned by a customer, with the event details, the "
+"shareable link and how many wanted items are still unbought."
+msgstr ""
+
+#: src/Service/AbilitiesService.php:127
+msgid "Get a gift registry with its items"
+msgstr ""
+
+#: src/Service/AbilitiesService.php:128
+msgid ""
+"Returns one registry: event details, shareable link, and every wanted "
+"product with the quantity wanted, the quantity already bought by guests and "
+"the quantity still needed."
+msgstr ""
+
+#: src/Service/AbilitiesService.php:225
+msgid "No gift registry was found for that ID."
+msgstr ""
 
 #: src/Service/AddToRegistry.php:79
 msgid "Create a gift registry"
@@ -346,28 +396,73 @@ msgstr "Zur Geschenkliste hinzufügen"
 msgid "This gift registry is not available."
 msgstr "Diese Geschenkliste ist nicht verfügbar."
 
-#: src/Service/PublicView.php:112
+#: src/Service/PublicView.php:155
 msgid "No items have been added to this registry yet."
 msgstr "Zu dieser Geschenkliste wurden noch keine Elemente hinzugefügt."
 
 #. translators: 1: purchased count, 2: desired count
-#: src/Service/PublicView.php:148
+#: src/Service/PublicView.php:191
 #, php-format
 msgid "%1$d of %2$d purchased"
 msgstr "%1$d von %2$d gekauft"
 
-#: src/Service/PublicView.php:174 src/Service/PublicView.php:175
+#: src/Service/PublicView.php:217 src/Service/PublicView.php:218
 msgid "Fully purchased"
 msgstr "Vollständig gekauft"
 
-#: src/Service/PublicView.php:180
+#: src/Service/PublicView.php:231
 msgid "View product"
 msgstr "Produkt ansehen"
 
-#: src/Service/PublicView.php:194
+#: src/Service/PublicView.php:243
+msgid "Choose options"
+msgstr ""
+
+#: src/Service/PublicView.php:258
 msgid "Buy this gift"
 msgstr "Kaufe dieses Geschenk"
 
 #: src/Service/RegistryManager.php:40
 msgid "My gift registry"
 msgstr "Meine Geschenkliste"
+
+#: src/Service/RegistryPrivacyService.php:86
+msgid "Registry Title"
+msgstr ""
+
+#: src/Service/RegistryPrivacyService.php:87
+msgid "Event Type"
+msgstr ""
+
+#: src/Service/RegistryPrivacyService.php:88
+msgid "Event Date"
+msgstr ""
+
+#: src/Service/RegistryPrivacyService.php:89
+msgid "Items Count"
+msgstr ""
+
+#: src/Service/RegistryPrivacyService.php:90
+msgid "Created At"
+msgstr ""
+
+#~ msgid "WPPoland"
+#~ msgstr "WPPoland"
+
+#~ msgid "https://plogins.com/"
+#~ msgstr "https://plogins.com/"
+
+#~ msgid ""
+#~ "On (recommended): a guest clicks \"Buy this gift\" on the registry and "
+#~ "the item drops into their cart in one step. Off: the button instead sends "
+#~ "them to the product page, where they choose options before adding to "
+#~ "cart, useful for variable products that need a size or colour picked "
+#~ "first. Has no effect unless gift registries are enabled above."
+#~ msgstr ""
+#~ "Ein (empfohlen): Ein Gast klickt in der Geschenkliste auf „Dieses "
+#~ "Geschenk kaufen“ und der Artikel wird in einem Schritt in seinen "
+#~ "Warenkorb gelegt. Aus: Die Schaltfläche leitet sie stattdessen zur "
+#~ "Produktseite weiter, wo sie Optionen auswählen, bevor sie sie in den "
+#~ "Warenkorb legen. Dies ist nützlich für variable Produkte, bei denen "
+#~ "zuerst eine Größe oder Farbe ausgewählt werden muss. Hat keine "
+#~ "Auswirkung, es sei denn, Geschenklisten sind oben aktiviert."
