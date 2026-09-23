@@ -1,11 +1,11 @@
-=== Plogins Registry - Gift Registry for WooCommerce ===
+=== Registry - Gift Registry for WooCommerce ===
 Contributors: motylanogha
 Tags: woocommerce, gift registry, wishlist, wedding, baby shower
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -87,6 +87,9 @@ Registry is fully translatable and ships the `plogins-registry.pot` template. Tr
 
 == Changelog ==
 
+= 1.1.5 =
+* Display name drops the "Plogins " prefix; the slug, text domain and option keys are unchanged.
+
 = 1.1.4 =
 * Fixed: arrow glyphs in the admin menu paths, and in the strings handed to translators. An arrow inside a translatable string makes the glyph every translator's problem and changes the layout in any locale that drops it.
 
@@ -98,7 +101,7 @@ Registry is fully translatable and ships the `plogins-registry.pot` template. Tr
 * The translation template was regenerated. It still named an older version of the plugin and pointed at source lines that had since moved, which is what translation tools read to show a string in context.
 
 = 1.1.1 =
-* Renamed to Plogins Registry - Gift Registry for WooCommerce so the name leads with the brand rather than a generic word, which is what the WordPress.org plugin review team asks for. The plugin slug is unchanged.
+* Renamed to Registry - Gift Registry for WooCommerce so the name leads with the brand rather than a generic word, which is what the WordPress.org plugin review team asks for. The plugin slug is unchanged.
 
 = 1.1.0 =
 * An AI assistant working in your wp-admin can now read gift registries for you, through the WordPress Abilities API (WordPress 6.9 and later). Ask what is still unbought on a registry and the answer comes from the real list: what was wanted, how many guests have already bought, and how many are still needed.
