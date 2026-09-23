@@ -39,12 +39,12 @@ msgstr ""
 #. Author of the plugin
 #: registry.php
 msgid "WPPoland.com"
-msgstr ""
+msgstr "WPPoland.com"
 
 #. Author URI of the plugin
 #: registry.php
 msgid "https://wppoland.com"
-msgstr ""
+msgstr "https://wppoland.com"
 
 #: registry.php:69
 msgid ""
@@ -76,7 +76,7 @@ msgstr "Lista prezentów została usunięta."
 
 #: src/Account/MyRegistries.php:282
 msgid "You have reached the maximum number of gift registries allowed."
-msgstr ""
+msgstr "Osiągnięto maksymalną dozwoloną liczbę list prezentów."
 
 #: src/Account/MyRegistries.php:283
 msgid "Sorry, that action could not be completed."
@@ -122,7 +122,7 @@ msgstr "Utwórz nową listę prezentów"
 #: src/Account/MyRegistries.php:363
 #, php-format
 msgid "You have reached the limit of %d gift registry set by this store."
-msgstr ""
+msgstr "Osiągnięto limit list prezentów ustawiony przez ten sklep (%d)."
 
 #: src/Account/MyRegistries.php:384
 msgid "Back to all registries"
@@ -282,7 +282,7 @@ msgid ""
 "\"Choose options\" and open the product page instead, the registry is "
 "remembered so the gift still counts. Off: every item sends guests to the "
 "product page. Has no effect unless gift registries are enabled above."
-msgstr ""
+msgstr "Włączone (zalecane): gość klika \"Kup ten prezent\" na liście prezentów, a produkt trafia do jego koszyka w jednym kroku. Prezenty, przy których trzeba najpierw wybrać opcje, na przykład produkt z wariantem rozmiaru lub koloru, zawsze pokazują \"Wybierz opcje\" i otwierają stronę produktu, lista prezentów jest zapamiętywana, więc prezent nadal się liczy. Wyłączone: każda pozycja kieruje gości na stronę produktu. Nie działa, jeśli listy prezentów nie są włączone powyżej."
 
 #: src/Admin/Settings.php:124
 msgid "Guests reach a registry at a link like:"
@@ -331,47 +331,47 @@ msgstr "Inne"
 
 #: src/Service/AbilitiesService.php:64
 msgid "Registry, gift registries"
-msgstr ""
+msgstr "Registry, listy prezentów"
 
 #: src/Service/AbilitiesService.php:65
 msgid ""
 "Gift registries a customer owns, with their event details and shareable link."
-msgstr ""
+msgstr "Listy prezentów należące do klienta, wraz ze szczegółami wydarzenia i linkiem do udostępnienia."
 
 #: src/Service/AbilitiesService.php:69
 msgid "Registry, registry items"
-msgstr ""
+msgstr "Registry, pozycje listy prezentów"
 
 #: src/Service/AbilitiesService.php:70
 msgid ""
 "The products wanted on a registry, their desired quantities and what guests "
 "have already bought."
-msgstr ""
+msgstr "Produkty pożądane na liście prezentów, ich pożądane ilości oraz to, co goście już kupili."
 
 #: src/Service/AbilitiesService.php:87
 msgid "List a customer's gift registries"
-msgstr ""
+msgstr "Wypisz listy prezentów klienta"
 
 #: src/Service/AbilitiesService.php:88
 msgid ""
 "Returns the gift registries owned by a customer, with the event details, the "
 "shareable link and how many wanted items are still unbought."
-msgstr ""
+msgstr "Zwraca listy prezentów należące do klienta, wraz ze szczegółami wydarzenia, linkiem do udostępnienia i liczbą pożądanych pozycji, których jeszcze nie kupiono."
 
 #: src/Service/AbilitiesService.php:127
 msgid "Get a gift registry with its items"
-msgstr ""
+msgstr "Pobierz listę prezentów wraz z pozycjami"
 
 #: src/Service/AbilitiesService.php:128
 msgid ""
 "Returns one registry: event details, shareable link, and every wanted "
 "product with the quantity wanted, the quantity already bought by guests and "
 "the quantity still needed."
-msgstr ""
+msgstr "Zwraca jedną listę prezentów: szczegóły wydarzenia, link do udostępnienia oraz każdy pożądany produkt z ilością pożądaną, ilością już kupioną przez gości i ilością wciąż potrzebną."
 
 #: src/Service/AbilitiesService.php:225
 msgid "No gift registry was found for that ID."
-msgstr ""
+msgstr "Nie znaleziono listy prezentów o tym identyfikatorze."
 
 #: src/Service/AddToRegistry.php:79
 msgid "Create a gift registry"
@@ -413,7 +413,7 @@ msgstr "Zobacz produkt"
 
 #: src/Service/PublicView.php:243
 msgid "Choose options"
-msgstr ""
+msgstr "Wybierz opcje"
 
 #: src/Service/PublicView.php:258
 msgid "Buy this gift"
@@ -425,23 +425,23 @@ msgstr "Moja lista prezentów"
 
 #: src/Service/RegistryPrivacyService.php:86
 msgid "Registry Title"
-msgstr ""
+msgstr "Nazwa listy prezentów"
 
 #: src/Service/RegistryPrivacyService.php:87
 msgid "Event Type"
-msgstr ""
+msgstr "Typ wydarzenia"
 
 #: src/Service/RegistryPrivacyService.php:88
 msgid "Event Date"
-msgstr ""
+msgstr "Data wydarzenia"
 
 #: src/Service/RegistryPrivacyService.php:89
 msgid "Items Count"
-msgstr ""
+msgstr "Liczba pozycji"
 
 #: src/Service/RegistryPrivacyService.php:90
 msgid "Created At"
-msgstr ""
+msgstr "Data utworzenia"
 
 #~ msgid "WPPoland"
 #~ msgstr "WPPoland"
