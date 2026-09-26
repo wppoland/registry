@@ -5,7 +5,11 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-NAME="$(basename "$ROOT_DIR")"
+# The package folder and zip take their name from the plugin slug, which is the
+# Text Domain, not the local checkout directory. wp.org requires text domain ==
+# slug, and naming the artifact after the working copy is what pended customs.
+NAME="$(grep -m1 -oE 'Text Domain:[[:space:]]+[a-z0-9-]+' "$ROOT_DIR"/*.php | awk '{print $3}')"
+[ -n "$NAME" ] || { echo "ERROR: could not read Text Domain from the plugin header" >&2; exit 1; }
 OUT_DIR="${1:-/tmp/${NAME}-build}"
 STAGE="${OUT_DIR}/${NAME}"
 
@@ -18,5 +22,7 @@ rsync -a --exclude-from="${ROOT_DIR}/.distignore" \
 
 find "${STAGE}" -name '.DS_Store' -delete
 
+# zip -r adds to an existing archive, so a stale one keeps files the build no longer ships.
+rm -f "/tmp/${NAME}.zip"
 ( cd "${OUT_DIR}" && zip -rqX "/tmp/${NAME}.zip" "${NAME}" -x '*.DS_Store' )
 echo "Built /tmp/${NAME}.zip from ${STAGE}"

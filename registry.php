@@ -3,7 +3,7 @@
  * Plugin Name:       Registry - Gift Registry for WooCommerce
  * Plugin URI:        https://plogins.com/registry/
  * Description:        Let customers create shareable gift registries for weddings, baby showers and events.
- * Version:           1.0.4
+ * Version:           1.1.5
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * Requires Plugins:  woocommerce
@@ -11,10 +11,10 @@
  * Author URI:        https://wppoland.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       registry
+ * Text Domain:       plogins-registry
  * Domain Path:       /languages
  * WC requires at least: 8.0
- * WC tested up to: 10.9
+ * WC tested up to: 11.0
  *
  * @package Registry
  */
@@ -25,7 +25,7 @@ namespace Registry;
 
 defined('ABSPATH') || exit;
 
-const VERSION     = '1.0.4';
+const VERSION     = '1.1.5';
 const PLUGIN_FILE = __FILE__;
 
 define('REGISTRY_DIR', plugin_dir_path(__FILE__));
@@ -66,7 +66,7 @@ add_action('plugins_loaded', static function (): void {
     if (! class_exists('WooCommerce')) {
         add_action('admin_notices', static function (): void {
             echo '<div class="notice notice-error"><p>';
-            echo esc_html__('Registry - Gift Registry for WooCommerce requires WooCommerce to be active.', 'registry');
+            echo esc_html__('Registry - Gift Registry for WooCommerce requires WooCommerce to be active.', 'plogins-registry');
             echo '</p></div>';
         });
         return;
