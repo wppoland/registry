@@ -36,6 +36,9 @@ final class PurchaseTracker implements HasHooks
         // Carry registry context from the add-to-cart request into cart item data.
         add_filter('woocommerce_add_cart_item_data', [$this, 'captureCartItemData'], 10, 3);
 
+        // Keep that context alive when the guest has to pick options on the product page first.
+        add_action('woocommerce_before_add_to_cart_button', [$this, 'renderCartFormContext']);
+
         // Persist it onto the order line item at checkout.
         add_action('woocommerce_checkout_create_order_line_item', [$this, 'saveToLineItem'], 10, 4);
 
@@ -60,21 +63,60 @@ final class PurchaseTracker implements HasHooks
             return $cartItemData;
         }
 
-        $registryId = absint(wp_unslash($_REQUEST[self::ITEM_KEY])); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $registryId = $this->validRegistryId(absint(wp_unslash($_REQUEST[self::ITEM_KEY]))); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
         if ($registryId <= 0) {
-            return $cartItemData;
-        }
-
-        $registry = get_post($registryId);
-
-        if (! $registry instanceof \WP_Post || GiftRegistry::POST_TYPE !== $registry->post_type) {
             return $cartItemData;
         }
 
         $cartItemData[self::ITEM_KEY] = $registryId;
 
         return $cartItemData;
+    }
+
+    /**
+     * Print the registry id as a hidden field inside the add-to-cart form.
+     *
+     * A gift that needs options chosen, a variable product's size or colour, is sent from
+     * the shared registry to the product page. That form posts to the plain permalink, so
+     * the registry id sitting in the link would be dropped and the guest's purchase would
+     * be credited to nobody, leaving the item looking unbought on the shared page.
+     */
+    public function renderCartFormContext(): void
+    {
+        if (! isset($_GET[self::ITEM_KEY])) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            return;
+        }
+
+        $registryId = $this->validRegistryId(absint(wp_unslash($_GET[self::ITEM_KEY]))); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+        if ($registryId <= 0) {
+            return;
+        }
+
+        printf(
+            '<input type="hidden" name="%1$s" value="%2$s" />',
+            esc_attr(self::ITEM_KEY),
+            esc_attr((string) $registryId),
+        );
+    }
+
+    /**
+     * Confirm a submitted id belongs to an existing registry, or return 0.
+     */
+    private function validRegistryId(int $registryId): int
+    {
+        if ($registryId <= 0) {
+            return 0;
+        }
+
+        $registry = get_post($registryId);
+
+        if (! $registry instanceof \WP_Post || GiftRegistry::POST_TYPE !== $registry->post_type) {
+            return 0;
+        }
+
+        return $registryId;
     }
 
     /**

@@ -37,7 +37,7 @@ final class RegistryManager
         $title = trim($title);
 
         if ('' === $title) {
-            $title = __('My gift registry', 'registry');
+            $title = __('My gift registry', 'plogins-registry');
         }
 
         $postId = wp_insert_post(

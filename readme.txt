@@ -2,10 +2,10 @@
 Contributors: motylanogha
 Tags: woocommerce, gift registry, wishlist, wedding, baby shower
 Requires at least: 6.5
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.1
 Requires Plugins: woocommerce
-Stable tag: 1.0.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,32 +17,33 @@ Registry adds gift registries to your WooCommerce store. A logged-in customer cr
 
 Guests open that link, see which items are still needed, and buy a gift. Purchased quantities are counted from real WooCommerce orders, so anything already bought is marked as fully purchased and two people don't buy the same thing twice.
 
-Source and issue tracker live on GitHub: https://github.com/wppoland/registry
+Source and issue tracker live on GitHub: [github.com/wppoland/registry](https://github.com/wppoland/registry)
 
 = Documentation and links =
 
-* **Documentation** - https://plogins.com/registry/docs/
-* **Plugin page** - https://plogins.com/registry/
-* **Source code** - https://github.com/wppoland/registry
-* **Bug reports and feature requests** - https://github.com/wppoland/registry/issues
-* **Discussions and questions** - https://github.com/wppoland/registry/discussions
+* **Documentation**: [plogins.com/registry/docs/](https://plogins.com/registry/docs/)
+* **Plugin page**: [plogins.com/registry/](https://plogins.com/registry/)
+* **Source code**: [github.com/wppoland/registry](https://github.com/wppoland/registry)
+* **Bug reports and feature requests**: [github.com/wppoland/registry/issues](https://github.com/wppoland/registry/issues)
+* **Discussions and questions**: [github.com/wppoland/registry/discussions](https://github.com/wppoland/registry/discussions)
 
 
 = Features =
 
-* Customers create and manage their registries under My Account → Gift Registries.
+* Customers create and manage their registries under My Account > Gift Registries.
 * Each registry has an event type (wedding, baby shower, birthday, housewarming, other) and an event date.
 * An "Add to gift registry" control on single product pages, with a per-item desired quantity.
 * A public, read-only registry page on its own permalink, made for sharing.
 * Purchased quantities are read back from paid WooCommerce orders, so remaining counts stay current without manual updates.
 * Optional direct purchase from the shared page; with it off, guests are sent to the product page instead.
 * Every action checks registry ownership, so one customer can never edit another's registry.
+* On WordPress 6.9 and later, registries are exposed to the Abilities API, so an AI assistant in your admin can report what is still unbought. Reading only; it cannot change what is on a list.
 
 == Installation ==
 
-1. Upload the plugin to `/wp-content/plugins/registry`, or install via Plugins → Add New.
+1. Upload the plugin to `/wp-content/plugins/registry`, or install via Plugins > Add New.
 2. Activate it. WooCommerce must be installed and active.
-3. Registries are on by default. Visit WooCommerce → Gift Registries to turn them off or to choose whether guests can buy directly from the shared page.
+3. Registries are on by default. Visit WooCommerce > Gift Registries to turn them off or to choose whether guests can buy directly from the shared page.
 
 == Frequently Asked Questions ==
 
@@ -52,7 +53,7 @@ Yes. WooCommerce must be installed and active.
 
 = Who can create a registry? =
 
-Any logged-in customer, from the My Account → Gift Registries area.
+Any logged-in customer, from the My Account > Gift Registries area.
 
 = How does purchase tracking work? =
 
@@ -60,7 +61,7 @@ When a gift is bought through a registry, the registry it belongs to is stored o
 
 = Can guests buy directly from the shared page? =
 
-Yes, if "Allow direct purchase" is enabled in the settings. Otherwise the buy button sends guests to the product page.
+Yes, if "Allow direct purchase" is enabled in the settings. Otherwise the buy button sends guests to the product page. Gifts that need options picked first, such as a variable product with a size or colour, always open the product page so the guest can choose; the registry is remembered while they do, so the gift still counts.
 
 = Do guests need an account to view a shared registry? =
 
@@ -82,9 +83,33 @@ Registry does not connect to any external service. It makes no outbound network 
 
 == Translations ==
 
-Registry includes Polish, German and Spanish translations for the plugin interface. The text domain is `registry`, so WordPress.org language packs can also override or extend these bundled translations.
+Registry is fully translatable and ships the `plogins-registry.pot` template. Translations are delivered by WordPress.org language packs from translate.wordpress.org, which is where Polish, German and Spanish are being contributed; the package itself carries no compiled translation files.
 
 == Changelog ==
+
+= 1.1.5 =
+* Display name drops the "Plogins " prefix; the slug, text domain and option keys are unchanged.
+
+= 1.1.4 =
+* Fixed: arrow glyphs in the admin menu paths, and in the strings handed to translators. An arrow inside a translatable string makes the glyph every translator's problem and changes the layout in any locale that drops it.
+
+= 1.1.3 =
+* The readme still said the plugin was tested up to WordPress 7.0. WordPress 7.1 is current, and a plugin whose readme names an older version is hidden from the plugin directory's search results.
+
+= 1.1.2 =
+* Registry Pro could never start. Registry finished loading without announcing it, so the paid add-on sat waiting for a signal that was never sent and none of its features (owner notifications, multiple registries per customer, group gifting) ever appeared. Registry now announces the end of its own boot, which is what Registry Pro listens for.
+* The translation template was regenerated. It still named an older version of the plugin and pointed at source lines that had since moved, which is what translation tools read to show a string in context.
+
+= 1.1.1 =
+* Renamed to Registry - Gift Registry for WooCommerce so the name leads with the brand rather than a generic word, which is what the WordPress.org plugin review team asks for. The plugin slug is unchanged.
+
+= 1.1.0 =
+* An AI assistant working in your wp-admin can now read gift registries for you, through the WordPress Abilities API (WordPress 6.9 and later). Ask what is still unbought on a registry and the answer comes from the real list: what was wanted, how many guests have already bought, and how many are still needed.
+* Reading only. Nothing an assistant can call adds an item, changes a wanted quantity or removes anything, and registries are identified by customer id rather than by name or email. Only shop managers can use these, and on WordPress 6.8 and earlier nothing changes.
+
+= 1.0.5 =
+* Gifts with options, such as a variable product with a size or colour, now show "Choose options" and open the product page, instead of a "Buy this gift" button that added nothing to the cart.
+* The registry is remembered while the guest picks those options, so the gift is counted as bought once the order is paid.
 
 = 1.0.3 =
 * Fixed low-contrast admin headings under an OS dark-mode preference.
