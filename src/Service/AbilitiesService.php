@@ -117,7 +117,7 @@ final class AbilitiesService implements HasHooks
             ],
             'execute_callback'    => [$this, 'executeListRegistries'],
             'permission_callback' => [$this, 'canReadCustomer'],
-            'meta'                => ['show_in_rest' => true, 'readonly' => true],
+            'meta'                => ['show_in_rest' => true, 'annotations' => ['readonly' => true, 'destructive' => false, 'idempotent' => true]],
         ]);
     }
 
@@ -165,7 +165,7 @@ final class AbilitiesService implements HasHooks
             ],
             'execute_callback'    => [$this, 'executeGetRegistry'],
             'permission_callback' => [$this, 'canReadRegistry'],
-            'meta'                => ['show_in_rest' => true, 'readonly' => true],
+            'meta'                => ['show_in_rest' => true, 'annotations' => ['readonly' => true, 'destructive' => false, 'idempotent' => true]],
         ]);
     }
 
