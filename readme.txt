@@ -39,6 +39,32 @@ Source and issue tracker live on GitHub: [github.com/wppoland/registry](https://
 * Every action checks registry ownership, so one customer can never edit another's registry.
 * On WordPress 6.9 and later, registries are exposed to the Abilities API, so an AI assistant in your admin can report what is still unbought. Reading only; it cannot change what is on a list.
 
+== Registry Pro ==
+
+Registry Pro is a separate paid plugin that extends Registry.
+
+Included in Registry:
+
+* Registries in My Account
+* Event type and date
+* Add from product pages
+* Shareable page
+* Purchase tracking
+
+Registry Pro adds:
+
+* Owner notifications
+* Multiple registries per customer
+* Group gifting and contributions
+* Registry themes
+* Thank-you tracking
+
+The free edition is not a trial and its features stay available without a time limit.
+
+* **Registry Pro** - [plogins.com/registry-pro/](https://plogins.com/registry-pro/)
+* **Compare editions and pricing** - [plogins.com/registry-pro/pricing/](https://plogins.com/registry-pro/pricing/)
+* **PRO documentation** - [plogins.com/registry-pro/docs/](https://plogins.com/registry-pro/docs/)
+
 == Installation ==
 
 1. Upload the plugin to `/wp-content/plugins/registry`, or install via Plugins > Add New.
