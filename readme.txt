@@ -166,3 +166,8 @@ Registry is fully translatable and ships the `plogins-registry.pot` template. Tr
 
 = 0.1.0 =
 * Initial release.
+
+== Upgrade Notice ==
+
+= 1.1.7 =
+Security release. Default installations are not exposed; only sites that give other users the Editor or Author role. Update, nothing else to do.
