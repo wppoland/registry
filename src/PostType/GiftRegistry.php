@@ -88,6 +88,21 @@ final class GiftRegistry implements HasHooks
                 'supports'            => ['title', 'author'],
                 'capability_type'     => 'post',
                 'map_meta_cap'        => true,
+                // Customers write registries through RegistryManager, never
+                // through post caps, so the plural primitives go to shop staff
+                // instead of every Editor and Author. The meta caps
+                // (edit_post/read_post/delete_post) stay for map_meta_cap to
+                // derive: mapping one onto manage_woocommerce turns that into a
+                // meta cap and admins lose the WooCommerce menu.
+                'capabilities'        => [
+                    'edit_posts'          => 'manage_woocommerce',
+                    'edit_others_posts'   => 'manage_woocommerce',
+                    'publish_posts'       => 'manage_woocommerce',
+                    'read_private_posts'  => 'manage_woocommerce',
+                    'create_posts'        => 'manage_woocommerce',
+                    'delete_posts'        => 'manage_woocommerce',
+                    'delete_others_posts' => 'manage_woocommerce',
+                ],
             ],
         );
     }
