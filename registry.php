@@ -14,7 +14,7 @@
  * Text Domain:       plogins-registry
  * Domain Path:       /languages
  * WC requires at least: 8.0
- * WC tested up to: 11.0
+ * WC tested up to: 11.2
  *
  * @package Registry
  */
