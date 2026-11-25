@@ -28,8 +28,20 @@ final class Settings implements HasHooks
     public function registerHooks(): void
     {
         add_action('admin_menu', [$this, 'addMenuPage']);
+        add_filter('plugin_action_links_' . plugin_basename(\Registry\PLUGIN_FILE), [$this, 'actionLinks']);
         add_action('admin_init', [$this, 'registerSettings']);
         add_action('admin_enqueue_scripts', [$this, 'enqueueAssets']);
+    }
+
+    /**
+     * @param array<int|string, string> $links
+     * @return array<int|string, string>
+     */
+    public function actionLinks(array $links): array
+    {
+        array_unshift($links, sprintf('<a href="%s">%s</a>', esc_url(admin_url('admin.php?page=' . self::PAGE)), esc_html__('Gift Registries', 'plogins-registry')));
+
+        return $links;
     }
 
     public function enqueueAssets(string $hook): void
